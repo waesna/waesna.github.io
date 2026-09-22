@@ -1,0 +1,3 @@
+8e50c06f557c698aaa0b93690ce8aee1164f0d3d41ab2bf0f1452243a57566fd  VoyagerOne-1.0.3-Linux.tar.gz
+5eac4ab9e1ca510cee525c8fbb5272f50c32c87f578119a0f7913573646ef55d  VoyagerOne-1.0.3-Windows.zip
+0505854bfa51ddb1462cf00fb46dbad8fb190e5fdb2b1fa342658d1f31d231d5  VoyagerOne-1.0.3-macOS.dmg

@@ -1,0 +1,14 @@
+name: Sürüm yayınla
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: gh release create "$GITHUB_REF_NAME" VoyagerOne-* SHA256SUMS.txt --title "VoyagerOne ${GITHUB_REF_NAME#v}" --notes "Bulut API ile de VoyagerOne olarak konuşur; karşılaştırma sorularında uygulamayı anlatır." --latest
+        env:
+          GH_TOKEN: ${{ github.token }}
