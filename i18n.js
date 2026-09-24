@@ -5,7 +5,10 @@ const I18N = {
   tr: {
     "meta.title": "VoyagerOne — Bilgisayarında çalışan yapay zekâ · WAESNA",
     "meta.desc": "VoyagerOne; macOS, Windows ve Linux için yapay zekâ çalışma alanı. Yerel modelle internetsiz çalışır, Word/Excel/PDF üretir, abonelik yok.",
-    "nav.product": "Ürün", "nav.compare": "Karşılaştır", "nav.pricing": "Fiyat", "nav.download": "İndir", "nav.faq": "SSS",
+    "nav.product": "Ürün", "nav.compare": "Karşılaştır", "nav.pricing": "Fiyat", "nav.download": "İndir", "nav.faq": "SSS", "nav.products": "Ürünler",
+    "prod.k": "WAESNA · Ürünler", "prod.h": "Ürünlerimiz", "prod.lead": "Kendi bilgisayarında çalışan, aboneliksiz yazılımlar. Verin sende kalır.",
+    "prod.v1.name": "VoyagerOne", "prod.v1.tag": "Yapay zekâ çalışma alanı", "prod.v1.desc": "Yerel modelle internetsiz çalışan, Word/Excel/PDF üreten masaüstü yapay zekâ.", "prod.v1.cta": "İncele",
+    "prod.v2.name": "Intro", "prod.v2.tag": "Yapay zekâ video editörü", "prod.v2.desc": "Ritme göre kesen, efekt basan, tamamen çevrimdışı CapCut alternatifi.", "prod.v2.cta": "İncele", "prod.new": "Yeni",
     "cta.try": "7 gün ücretsiz dene", "cta.pricing": "Fiyatlar", "cta.sticky": "7 gün ücretsiz dene",
 
     "hero.kicker": "WAESNA · VoyagerOne 1.0",
@@ -91,7 +94,10 @@ const I18N = {
   en: {
     "meta.title": "VoyagerOne — AI that runs on your computer · WAESNA",
     "meta.desc": "VoyagerOne is an AI workspace for macOS, Windows and Linux. Works offline with a local model, creates Word/Excel/PDF files, no subscription.",
-    "nav.product": "Product", "nav.compare": "Compare", "nav.pricing": "Pricing", "nav.download": "Download", "nav.faq": "FAQ",
+    "nav.product": "Product", "nav.compare": "Compare", "nav.pricing": "Pricing", "nav.download": "Download", "nav.faq": "FAQ", "nav.products": "Products",
+    "prod.k": "WAESNA · Products", "prod.h": "Our products", "prod.lead": "Software that runs on your own computer, no subscription. Your data stays with you.",
+    "prod.v1.name": "VoyagerOne", "prod.v1.tag": "AI workspace", "prod.v1.desc": "A desktop AI that works offline with a local model and creates Word/Excel/PDF files.", "prod.v1.cta": "Explore",
+    "prod.v2.name": "Intro", "prod.v2.tag": "AI video editor", "prod.v2.desc": "Cuts to the beat, adds effects, fully offline — the CapCut alternative.", "prod.v2.cta": "Explore", "prod.new": "New",
     "cta.try": "Try free for 7 days", "cta.pricing": "Pricing", "cta.sticky": "Try free for 7 days",
 
     "hero.kicker": "WAESNA · VoyagerOne 1.0",

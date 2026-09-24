@@ -40,5 +40,15 @@ const CONFIG = {
     mac:     "https://github.com/waesna/waesna.github.io/releases/download/v1.0.3/VoyagerOne-1.0.3-macOS.dmg",
     windows: "https://github.com/waesna/waesna.github.io/releases/download/v1.0.3/VoyagerOne-1.0.3-Windows.zip",
     linux:   "https://github.com/waesna/waesna.github.io/releases/download/v1.0.3/VoyagerOne-1.0.3-Linux.tar.gz"
+  },
+
+  /* INTRO (2. ürün) — video editörü ───────────────────────────────────
+     buy boşsa "Satın al" düğmesi e-posta ile talep açar. downloads boşsa
+     platform "yakında" görünür. Sürüm yayınlayınca linkleri doldur.        */
+  intro: {
+    version:  "1.0.0",
+    price:    "$9.99",
+    buy:      "",
+    downloads: { mac: "", windows: "", linux: "" }
   }
 };

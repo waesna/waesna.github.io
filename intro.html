@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intro — Yapay zekâ video editörü · WAESNA</title>
+<meta name="description" content="Intro; ritme göre kesen, efekt basan, altyazı ekleyen tamamen çevrimdışı yapay zekâ video editörü. Abonelik yok, verin sende.">
+<meta name="theme-color" content="#F7F4EE">
+<link rel="canonical" href="https://waesna.github.io/intro.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Intro — AI video editor">
+<meta property="og:description" content="Cuts to the beat, adds effects, works fully offline. No subscription.">
+<meta property="og:url" content="https://waesna.github.io/intro.html">
+<meta property="og:image" content="https://waesna.github.io/assets/og.png">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Intro","operatingSystem":"macOS, Windows, Linux",
+ "applicationCategory":"MultimediaApplication","offers":{"@type":"Offer","price":"9.99","priceCurrency":"USD"},
+ "publisher":{"@type":"Organization","name":"WAESNA","url":"https://waesna.github.io/"}}
+</script>
+<style>
+:root{
+  --paper:#F7F4EE; --raise:#FFFDF9; --ink:#17140F; --ink-2:#514B41; --ink-3:#8B8376;
+  --rule:#E4DCCE; --accent:#2F53D8; --accent-2:#5C8AFF; --good:#2F8F5B; --bad:#B4533A;
+  --display:"Bricolage Grotesque",Georgia,serif; --body:"Geist","Helvetica Neue",Arial,sans-serif; --mono:"Geist Mono",ui-monospace,Menlo,monospace;
+  --pad:clamp(20px,5vw,84px); --ease:cubic-bezier(.2,.7,.3,1);
+  --t-hero:clamp(40px,5.6vw,76px); --t-sec:clamp(28px,3.2vw,40px); --t-card:19px; --t-body:16px; --t-small:14px; --t-mono:12px;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
+  --paper:#0C0E13; --raise:#141821; --ink:#F1F4FA; --ink-2:#AEB6C6; --ink-3:#7B8494; --rule:#242a36; --accent:#5C8AFF; --accent-2:#89AEFF;
+}}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--paper);color:var(--ink);font:var(--t-body)/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em;line-height:1.05}
+h1{font-size:var(--t-hero)} h2{font-size:var(--t-sec)} h3{font-size:var(--t-card);letter-spacing:-.01em;line-height:1.25}
+h1 em{font-style:normal;color:var(--accent)}
+.mono{font:500 var(--t-mono)/1.5 var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3)}
+section{padding:clamp(64px,9vw,120px) var(--pad);border-top:1px solid var(--rule)}
+.sec-head{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-bottom:44px;align-items:start}
+.lead{color:var(--ink-2);max-width:62ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 22px;border-radius:2px;font-size:15px;font-weight:600;border:1px solid var(--ink);transition:.2s var(--ease)}
+.btn.solid{background:var(--ink);color:var(--paper)} .btn.solid:hover{background:var(--accent);border-color:var(--accent)}
+.btn.line:hover{background:var(--ink);color:var(--paper)}
+.btn.blue{background:var(--accent);border-color:var(--accent);color:#fff} .btn.blue:hover{background:var(--accent-2);border-color:var(--accent-2)}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:13px var(--pad);
+  background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+.nav.on{border-bottom-color:var(--rule)}
+.logo{display:flex;align-items:center;gap:11px;font:600 15px/1 var(--display);letter-spacing:.16em}
+.logo img{height:26px;width:auto;display:block}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .logo img{filter:invert(1)}}
+.nav-links{display:flex;gap:24px;font-size:var(--t-small);color:var(--ink-2)} .nav-links a:hover{color:var(--ink)}
+.nav-r{display:flex;align-items:center;gap:16px}
+.lang{display:flex;border:1px solid var(--rule);border-radius:2px;overflow:hidden}
+.lang button{padding:6px 10px;font:500 12px/1 var(--mono);color:var(--ink-3)}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+@media (max-width:860px){.nav-links{display:none}.nav .btn{display:none}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,64px);align-items:center;padding:clamp(48px,7vw,96px) var(--pad) clamp(56px,7vw,104px)}
+.hero .lead{margin-top:18px;font-size:18px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.trust{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:26px;font-size:var(--t-small);color:var(--ink-3)}
+.trust span{display:flex;align-items:center;gap:7px}
+.trust span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent)}
+@media (max-width:920px){.hero{grid-template-columns:1fr}}
+
+/* editor mock */
+.demo{background:#0B0E13;border:1px solid var(--rule);border-radius:12px;overflow:hidden;box-shadow:0 30px 70px -40px rgba(0,0,0,.6)}
+.demo-bar{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#11151C;border-bottom:1px solid #1f2530}
+.demo-bar i{width:11px;height:11px;border-radius:50%;background:#2a3140}
+.demo-bar b{margin-left:8px;color:#8FB4FF;font:600 12px/1 var(--mono);letter-spacing:.1em}
+.demo-stage{aspect-ratio:16/9;position:relative;background:linear-gradient(120deg,#1a2embed 0,#101722 100%);display:grid;place-items:center;overflow:hidden}
+.demo-stage{background:radial-gradient(120% 120% at 30% 20%,#22304d,#0d1420)}
+.demo-mark{width:84px;height:80px}
+.demo-cap{position:absolute;left:0;right:0;bottom:12%;text-align:center;font:800 15px var(--body);color:#fff;letter-spacing:.02em;text-transform:uppercase}
+.demo-cap b{color:#8FB4FF}
+.demo-tl{padding:12px 14px;background:#0e131b;border-top:1px solid #1f2530;display:flex;flex-direction:column;gap:7px}
+.demo-fx{display:flex;gap:6px}
+.demo-fx span{font:600 10px/1 var(--mono);letter-spacing:.06em;color:#cdd6e6;background:#1c2433;border:1px solid #2a3140;padding:5px 8px;border-radius:4px}
+.demo-fx span.b{color:#0B0E13;background:#5C8AFF;border-color:#5C8AFF}
+.demo-strip{display:flex;gap:3px;height:34px}
+.demo-strip i{flex:1;border-radius:3px;background:linear-gradient(180deg,#2b3852,#1a2233)}
+.demo-strip i:nth-child(3){outline:2px solid #5C8AFF;outline-offset:-2px}
+.demo-beats{display:flex;gap:3px}
+.demo-beats i{flex:1;height:3px;border-radius:2px;background:#243049}
+.demo-beats i:nth-child(4n+1){background:#5C8AFF}
+
+/* features */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.cell{background:var(--raise);padding:26px 24px;display:flex;flex-direction:column;gap:9px}
+.cell h3{margin-top:2px}
+.cell p{color:var(--ink-2);font-size:var(--t-small)}
+@media (max-width:860px){.grid{grid-template-columns:1fr}.sec-head{grid-template-columns:1fr;gap:10px}}
+
+/* price */
+.buybox{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;background:var(--raise);border:1px solid var(--rule);border-radius:6px;padding:clamp(24px,4vw,44px)}
+.buybox .price{font:600 clamp(40px,6vw,64px)/1 var(--display);letter-spacing:-.03em}
+.buybox .price small{display:block;font:400 14px/1.5 var(--body);color:var(--ink-3);margin-top:8px}
+.buybox ul{list-style:none;display:flex;flex-direction:column;gap:9px;font-size:var(--t-small);color:var(--ink-2)}
+.buybox li::before{content:"—";color:var(--accent);margin-right:9px}
+.buy-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+@media (max-width:760px){.buybox{grid-template-columns:1fr}}
+
+/* download */
+.dl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.dl{display:flex;flex-direction:column;gap:6px;padding:22px;border:1px solid var(--rule);border-radius:4px;background:var(--raise)}
+.dl b{font-family:var(--display);font-size:17px}
+.dl span{font-size:13px;color:var(--ink-3)}
+.dl a{margin-top:8px;font-size:14px;font-weight:600;color:var(--accent)}
+.dl.soon{opacity:.6}
+@media (max-width:760px){.dl-grid{grid-template-columns:1fr}}
+
+/* footer */
+footer{padding:40px var(--pad);border-top:1px solid var(--rule);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--ink-3)}
+footer a:hover{color:var(--ink)}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <a class="logo" href="index.html"><img src="assets/waesna-mark.png" alt="WAESNA" width="704" height="466">WAESNA</a>
+  <div class="nav-links">
+    <a href="index.html#urunler" data-t="i.nav.products">Ürünler</a>
+    <a href="#ozellik" data-t="i.nav.features">Özellikler</a>
+    <a href="#fiyat" data-t="i.nav.pricing">Fiyat</a>
+    <a href="#indir" data-t="i.nav.download">İndir</a>
+  </div>
+  <div class="nav-r">
+    <div class="lang" role="group" aria-label="Language"><button data-lang="tr">TR</button><button data-lang="en">EN</button></div>
+    <a class="btn blue" href="#fiyat" data-t="i.cta.buy">Satın al</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div>
+    <p class="mono" data-t="i.hero.kicker">WAESNA · Intro 1.0</p>
+    <h1 style="margin-top:16px" data-th="i.hero.title">Çekim girer. <em>Hikâye</em> çıkar.</h1>
+    <p class="lead" data-t="i.hero.lead"></p>
+    <div class="cta"><a class="btn blue" href="#fiyat" data-t="i.cta.buy">Satın al</a><a class="btn line" href="#ozellik" data-t="i.cta.features">Özellikler</a></div>
+    <div class="trust"><span data-t="i.trust.1"></span><span data-t="i.trust.2"></span><span data-t="i.trust.3"></span><span data-t="i.trust.4"></span></div>
+  </div>
+  <div class="demo" aria-hidden="true">
+    <div class="demo-bar"><i></i><i></i><i></i><b>Intro</b></div>
+    <div class="demo-stage">
+      <svg class="demo-mark" viewBox="0 0 104 100"><path d="M 94 18 L 55.15 63.06 A 20 20 0 1 1 55.15 36.94 L 94 82 L 94 18 Z" fill="none" stroke="#EAF0FF" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      <div class="demo-cap">RİTME <b>GÖRE</b> KESİLDİ</div>
+    </div>
+    <div class="demo-tl">
+      <div class="demo-fx"><span class="b">Phonk</span><span>Shake · Darbe</span><span>Flaş</span><span>Zoom</span></div>
+      <div class="demo-strip"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="demo-beats"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+  </div>
+</header>
+
+<section id="ozellik">
+  <div class="sec-head rv"><p class="mono" data-t="i.feat.k"></p><h2 data-t="i.feat.h"></h2></div>
+  <div class="grid rv">
+    <div class="cell"><p class="mono" data-t="i.f1.k"></p><h3 data-t="i.f1.h"></h3><p data-t="i.f1.p"></p></div>
+    <div class="cell"><p class="mono" data-t="i.f2.k"></p><h3 data-t="i.f2.h"></h3><p data-t="i.f2.p"></p></div>
+    <div class="cell"><p class="mono" data-t="i.f3.k"></p><h3 data-t="i.f3.h"></h3><p data-t="i.f3.p"></p></div>
+    <div class="cell"><p class="mono" data-t="i.f4.k"></p><h3 data-t="i.f4.h"></h3><p data-t="i.f4.p"></p></div>
+    <div class="cell"><p class="mono" data-t="i.f5.k"></p><h3 data-t="i.f5.h"></h3><p data-t="i.f5.p"></p></div>
+    <div class="cell"><p class="mono" data-t="i.f6.k"></p><h3 data-t="i.f6.h"></h3><p data-t="i.f6.p"></p></div>
+  </div>
+</section>
+
+<section id="fiyat">
+  <div class="sec-head rv"><p class="mono" data-t="i.price.k"></p><h2 data-t="i.price.h"></h2></div>
+  <div class="buybox rv">
+    <div>
+      <div class="price" id="introPrice">$9.99<small data-t="i.price.note"></small></div>
+      <div class="buy-cta"><a class="btn blue" id="buyBtn" href="#indir" data-t="i.cta.buy">Satın al</a><a class="btn line" href="#indir" data-t="i.cta.download">İndir</a></div>
+    </div>
+    <ul>
+      <li data-t="i.price.1"></li><li data-t="i.price.2"></li><li data-t="i.price.3"></li><li data-t="i.price.4"></li>
+    </ul>
+  </div>
+</section>
+
+<section id="indir">
+  <div class="sec-head rv"><p class="mono" data-t="i.dl.k"></p><h2 data-t="i.dl.h"></h2></div>
+  <div class="dl-grid rv">
+    <div class="dl" id="dlMac"><b>macOS</b><span data-t="i.dl.mac"></span><a href="#" data-t="i.dl.get"></a></div>
+    <div class="dl" id="dlWin"><b>Windows</b><span data-t="i.dl.win"></span><a href="#" data-t="i.dl.get"></a></div>
+    <div class="dl" id="dlLin"><b>Linux</b><span data-t="i.dl.lin"></span><a href="#" data-t="i.dl.get"></a></div>
+  </div>
+  <p class="lead rv" style="margin-top:22px;font-size:14px" data-t="i.dl.note"></p>
+</section>
+
+<footer>
+  <span>© <span id="year">2026</span> WAESNA · Intro</span>
+  <span><a href="index.html" data-t="i.ft.home">Ana sayfa</a> · <a href="privacy.html" data-t="i.ft.privacy">Gizlilik</a> · <a href="terms.html" data-t="i.ft.terms">Koşullar</a></span>
+</footer>
+
+<script src="config.js"></script>
+<script>
+const I = {
+  tr: {
+    "i.nav.products":"Ürünler","i.nav.features":"Özellikler","i.nav.pricing":"Fiyat","i.nav.download":"İndir",
+    "i.cta.buy":"Satın al","i.cta.features":"Özellikler","i.cta.download":"İndir",
+    "i.hero.kicker":"WAESNA · Intro 1.0",
+    "i.hero.title":"Çekim girer. <em>Hikâye</em> çıkar.",
+    "i.hero.lead":"Intro; kliplerini ritme göre kesen, efekt basan, altyazı ekleyen bir yapay zekâ video editörüdür. Tamamen bilgisayarında, çevrimdışı çalışır — bulut yok, kota yok, filigran yok.",
+    "i.trust.1":"Tek seferlik ödeme","i.trust.2":"Tamamen çevrimdışı","i.trust.3":"macOS · Windows · Linux","i.trust.4":"Filigran yok",
+    "i.feat.k":"01 — Özellikler","i.feat.h":"CapCut'ın yaptığını, aboneliksiz ve cihazında",
+    "i.f1.k":"Ritim","i.f1.h":"Otomatik ritim algılama","i.f1.p":"Müziğin BPM'ini ve vuruşlarını bulur; kesimleri ve efektleri tam ritme oturtur.",
+    "i.f2.k":"Efektler","i.f2.h":"Shake, flaş, zoom, glitch","i.f2.p":"Her efektin alt türleri var: darbe/yatay/dikey shake, beyaz/siyah flaş, dijital/scan glitch, yön/zoom blur.",
+    "i.f3.k":"Oto-kurgu","i.f3.h":"Tek tuş tarifler","i.f3.p":"Temizle, Oto Özet, Reels'e çevir, Phonk, Estetik — tek tıkla profesyonel kurgu.",
+    "i.f4.k":"Altyazı","i.f4.h":"Cihazında altyazı","i.f4.p":"Konuşmayı kelime kelime yazıya döker, dolgu kelimeleri temizler. İnternet gerekmez.",
+    "i.f5.k":"Yazı","i.f5.h":"Her font seçilebilir","i.f5.p":"Sistemindeki tüm fontları kullanır; başlık ve altyazıları dilediğin yazı tipiyle.",
+    "i.f6.k":"Komut","i.f6.h":"Yazarak düzenle","i.f6.p":"“sessizlikleri kes, 9:16 yap, ritme göre shake ekle” yaz; anında uygular.",
+    "i.price.k":"02 — Fiyat","i.price.h":"Bir kere al, hep senin",
+    "i.price.note":" · tek seferlik ödeme (≈ ₺340)",
+    "i.price.1":"Ömür boyu lisans, aylık ücret yok","i.price.2":"macOS · Windows · Linux","i.price.3":"Tüm efektler ve oto-kurgu tarifleri","i.price.4":"Dışa aktardığın videolarda filigran yok",
+    "i.dl.k":"03 — İndir","i.dl.h":"Kur ve başla",
+    "i.dl.mac":"Apple Silicon · Intel","i.dl.win":"Windows 10 · 11","i.dl.lin":"AppImage · tar.gz",
+    "i.dl.get":"İndir","i.dl.soon":"Yakında",
+    "i.dl.note":"İndirme linkleri henüz hazırlanıyor. Şimdilik “Satın al” ile talep oluşturabilirsin.",
+    "i.ft.home":"Ana sayfa","i.ft.privacy":"Gizlilik","i.ft.terms":"Koşullar",
+  },
+  en: {
+    "i.nav.products":"Products","i.nav.features":"Features","i.nav.pricing":"Pricing","i.nav.download":"Download",
+    "i.cta.buy":"Buy","i.cta.features":"Features","i.cta.download":"Download",
+    "i.hero.kicker":"WAESNA · Intro 1.0",
+    "i.hero.title":"Footage in. <em>Story</em> out.",
+    "i.hero.lead":"Intro is an AI video editor that cuts your clips to the beat, adds effects and captions. It runs entirely on your computer, offline — no cloud, no quotas, no watermark.",
+    "i.trust.1":"One-time payment","i.trust.2":"Fully offline","i.trust.3":"macOS · Windows · Linux","i.trust.4":"No watermark",
+    "i.feat.k":"01 — Features","i.feat.h":"What CapCut does — without a subscription, on your device",
+    "i.f1.k":"Rhythm","i.f1.h":"Automatic beat detection","i.f1.p":"Finds the music's BPM and beats, then lands your cuts and effects exactly on the beat.",
+    "i.f2.k":"Effects","i.f2.h":"Shake, flash, zoom, glitch","i.f2.p":"Every effect has variants: impact/horizontal/vertical shake, white/black flash, digital/scan glitch, motion/zoom blur.",
+    "i.f3.k":"Auto-edit","i.f3.h":"One-tap recipes","i.f3.p":"Clean up, Auto highlight, Make a Reel, Phonk, Aesthetic — a pro edit in one click.",
+    "i.f4.k":"Captions","i.f4.h":"On-device captions","i.f4.p":"Transcribes speech word by word and removes filler words. No internet needed.",
+    "i.f5.k":"Type","i.f5.h":"Any font, your choice","i.f5.p":"Uses every font on your system for titles and captions, CorelDRAW-style.",
+    "i.f6.k":"Command","i.f6.h":"Edit by typing","i.f6.p":"Type “cut the silences, make it 9:16, add shake on the beat” — it applies instantly.",
+    "i.price.k":"02 — Pricing","i.price.h":"Buy once, yours forever",
+    "i.price.note":" · one-time payment",
+    "i.price.1":"Lifetime license, no monthly fee","i.price.2":"macOS · Windows · Linux","i.price.3":"All effects and auto-edit recipes","i.price.4":"No watermark on your exports",
+    "i.dl.k":"03 — Download","i.dl.h":"Install and start",
+    "i.dl.mac":"Apple Silicon · Intel","i.dl.win":"Windows 10 · 11","i.dl.lin":"AppImage · tar.gz",
+    "i.dl.get":"Download","i.dl.soon":"Soon",
+    "i.dl.note":"Download links are being prepared. For now you can request a copy via “Buy”.",
+    "i.ft.home":"Home","i.ft.privacy":"Privacy","i.ft.terms":"Terms",
+  }
+};
+function introLang(){ try{ const s=localStorage.getItem("waesna.lang"); if(s)return s; }catch(e){} return (navigator.language||"en").toLowerCase().startsWith("tr")?"tr":"en"; }
+function applyLang(lang){
+  const d=I[lang]||I.en; document.documentElement.lang=lang;
+  document.querySelectorAll("[data-t]").forEach(el=>{const v=d[el.dataset.t]; if(v!=null)el.textContent=v;});
+  document.querySelectorAll("[data-th]").forEach(el=>{const v=d[el.dataset.th]; if(v!=null)el.innerHTML=v;});
+  document.querySelectorAll("[data-lang]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===lang)));
+  try{localStorage.setItem("waesna.lang",lang);}catch(e){}
+  wireLinks(d);
+}
+function wireLinks(d){
+  const C=(typeof CONFIG!=='undefined'?CONFIG:{}); const ic=C.intro||{};
+  if(ic.price){ document.getElementById("introPrice").firstChild.textContent=ic.price; }
+  // Satın al: ödeme linki varsa oraya, yoksa e-posta ile talep
+  const buy=document.getElementById("buyBtn");
+  if(ic.buy){ buy.href=ic.buy; buy.target="_blank"; buy.rel="noopener"; }
+  else if(C.email){ buy.href="mailto:"+C.email+"?subject="+encodeURIComponent("Intro satın alma"); }
+  // İndirmeler
+  const dl=ic.downloads||{};
+  [["dlMac",dl.mac],["dlWin",dl.win||dl.windows],["dlLin",dl.lin||dl.linux]].forEach(([id,url])=>{
+    const box=document.getElementById(id); if(!box)return; const a=box.querySelector("a");
+    if(url){ a.href=url; a.textContent=(d["i.dl.get"]||"İndir"); box.classList.remove("soon"); }
+    else{ a.href="#fiyat"; a.textContent=(d["i.dl.soon"]||"Yakında"); box.classList.add("soon"); }
+  });
+}
+document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>applyLang(b.dataset.lang)));
+applyLang(introLang());
+document.getElementById("year").textContent=new Date().getFullYear();
+addEventListener("scroll",()=>document.getElementById("nav").classList.toggle("on",scrollY>8),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{threshold:.12});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
