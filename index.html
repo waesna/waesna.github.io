@@ -45,7 +45,7 @@ h1{font-size:var(--t-hero)} h1 em{font-style:normal;color:var(--accent)}
 h2{font-size:var(--t-sec)} h3{font-size:var(--t-card);letter-spacing:-.01em;line-height:1.25}
 .mono{font:500 var(--t-mono)/1.5 var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3)}
 section{padding:clamp(64px,9vw,120px) var(--pad);border-top:1px solid var(--rule)}
-.sec-head{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-bottom:44px;align-items:start}
+.sec-head{margin-bottom:40px}
 .lead{color:var(--ink-2);max-width:60ch}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 22px;border-radius:2px;font-size:15px;font-weight:600;border:1px solid var(--ink);transition:.2s var(--ease)}
 .btn.solid{background:var(--ink);color:var(--paper)} .btn.solid:hover{background:var(--accent);border-color:var(--accent)}
@@ -71,7 +71,7 @@ section{padding:clamp(64px,9vw,120px) var(--pad);border-top:1px solid var(--rule
 @media (max-width:920px){.hero{grid-template-columns:1fr}}
 /* hero showcase: iki ürün amblemi */
 .showcase{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.sc{aspect-ratio:1/1;border:1px solid var(--rule);border-radius:14px;background:var(--raise);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;transition:.25s var(--ease)}
+.sc{aspect-ratio:1/1;border:1px solid var(--rule);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;transition:.25s var(--ease)}
 .sc:hover{border-color:var(--accent);transform:translateY(-3px)}
 .sc img{width:44%;height:auto}
 .sc.in{background:#0B0E13}
@@ -81,7 +81,7 @@ section{padding:clamp(64px,9vw,120px) var(--pad);border-top:1px solid var(--rule
 .prods{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .prod-card{position:relative;display:flex;flex-direction:column;gap:12px;padding:30px;border:1px solid var(--rule);border-radius:4px;background:var(--raise);transition:.25s var(--ease)}
 .prod-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 18px 44px -28px rgba(0,0,0,.5)}
-.pc-logo{width:58px;height:58px;display:grid;place-items:center;border-radius:13px;overflow:hidden;background:var(--paper)}
+.pc-logo{width:58px;height:58px;display:grid;place-items:center;border-radius:13px;overflow:hidden}
 .pc-logo img{width:100%;height:100%;object-fit:contain}
 .pc-logo.in{background:#0B0E13;padding:11px}
 .pc-desc{color:var(--ink-2);font-size:var(--t-small);flex:1}
@@ -93,6 +93,11 @@ section{padding:clamp(64px,9vw,120px) var(--pad);border-top:1px solid var(--rule
 .prod-card:hover .pc-cta::after{margin-left:3px}
 .pc-badge{position:absolute;top:16px;right:16px;font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--paper);background:var(--accent);padding:5px 9px;border-radius:2px}
 @media(max-width:760px){.prods{grid-template-columns:1fr}.showcase{grid-template-columns:1fr 1fr}}
+/* manifesto bandı */
+.band{padding:clamp(60px,9vw,110px) var(--pad);border-top:1px solid var(--rule)}
+.band p{font:600 clamp(26px,3.8vw,46px)/1.14 var(--display);letter-spacing:-.02em;max-width:22ch}
+.band em{font-style:normal;color:var(--accent)}
+.endcta .cta{margin-top:2px}
 /* hakkında */
 .vals{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
 .val{background:var(--raise);padding:26px 22px;display:flex;flex-direction:column;gap:8px}
@@ -121,24 +126,25 @@ footer a:hover{color:var(--ink)}
 
 <header class="hero" id="top">
   <div>
-    <p class="mono" data-t="h.hero.kicker">WAESNA</p>
     <h1 style="margin-top:16px" data-th="h.hero.title">Yazılım <em>senin</em> bilgisayarında. Abonelik yok.</h1>
     <p class="lead" data-t="h.hero.lead"></p>
     <div class="cta"><a class="btn solid" href="#urunler" data-t="h.cta.products">Ürünleri gör</a><a class="btn line" href="#hakkinda" data-t="h.cta.about">Hakkımızda</a></div>
     <div class="trust"><span data-t="h.trust.1"></span><span data-t="h.trust.2"></span><span data-t="h.trust.3"></span></div>
   </div>
   <div class="showcase" aria-hidden="true">
-    <a class="sc" href="voyagerone.html"><img src="assets/voyagerone-logo.png" alt=""><b>VoyagerOne</b></a>
+    <a class="sc" href="voyagerone.html"><img src="assets/voyagerone-mark.svg" alt=""><b>VoyagerOne</b></a>
     <a class="sc in" href="intro.html"><img src="assets/intro-logo.svg" alt=""><b>Intro</b></a>
   </div>
 </header>
 
+<section class="band"><p class="rv" data-th="h.manifesto"></p></section>
+
 <section id="urunler">
-  <div class="sec-head rv"><p class="mono" data-t="h.prod.k"></p><h2 data-t="h.prod.h"></h2></div>
+  <div class="sec-head rv"><h2 data-t="h.prod.h"></h2></div>
   <p class="lead rv" style="margin-bottom:34px" data-t="h.prod.lead"></p>
   <div class="prods rv">
     <a class="prod-card" href="voyagerone.html">
-      <div class="pc-logo"><img src="assets/voyagerone-logo.png" alt="VoyagerOne"></div>
+      <div class="pc-logo"><img src="assets/voyagerone-mark.svg" alt="VoyagerOne"></div>
       <p class="mono" data-t="h.v1.tag"></p><h3>VoyagerOne</h3>
       <p class="pc-desc" data-t="h.v1.desc"></p>
       <div class="pc-foot"><span class="pc-price">$149<small data-t="h.once"></small></span><span class="pc-cta" data-t="h.explore"></span></div>
@@ -154,7 +160,7 @@ footer a:hover{color:var(--ink)}
 </section>
 
 <section id="hakkinda">
-  <div class="sec-head rv"><p class="mono" data-t="h.about.k"></p><h2 data-t="h.about.h"></h2></div>
+  <div class="sec-head rv"><h2 data-t="h.about.h"></h2></div>
   <p class="lead rv" style="margin-bottom:34px" data-t="h.about.lead"></p>
   <div class="vals rv">
     <div class="val"><h3 data-t="h.a1.h"></h3><p data-t="h.a1.p"></p></div>
@@ -162,6 +168,12 @@ footer a:hover{color:var(--ink)}
     <div class="val"><h3 data-t="h.a3.h"></h3><p data-t="h.a3.p"></p></div>
     <div class="val"><h3 data-t="h.a4.h"></h3><p data-t="h.a4.p"></p></div>
   </div>
+</section>
+
+<section id="baslayalim" class="endcta">
+  <div class="sec-head rv"><h2 data-t="h.cta2.h"></h2></div>
+  <p class="lead rv" style="margin-bottom:26px" data-t="h.cta2.p"></p>
+  <div class="cta rv"><a class="btn solid" href="voyagerone.html" data-t="h.cta2.v1"></a><a class="btn line" href="intro.html" data-t="h.cta2.v2"></a></div>
 </section>
 
 <footer>
@@ -180,7 +192,7 @@ const H = {
     "h.trust.1":"Tek seferlik ödeme","h.trust.2":"Çevrimdışı çalışır","h.trust.3":"Verin sende kalır",
     "h.prod.k":"Ürünler","h.prod.h":"Ürünlerimiz","h.prod.lead":"Her biri kendi başına, aboneliksiz ve tamamen cihazında çalışır.",
     "h.v1.tag":"Yapay zekâ çalışma alanı","h.v1.desc":"Yerel modelle internetsiz çalışan, Word/Excel/PDF üreten masaüstü yapay zekâ.",
-    "h.v2.tag":"Yapay zekâ video editörü","h.v2.desc":"Ritme göre kesen, efekt basan, altyazı ekleyen çevrimdışı CapCut alternatifi.",
+    "h.v2.tag":"Yapay zekâ video editörü","h.v2.desc":"Ritme göre kesen, efekt basan, altyazı ekleyen tamamen çevrimdışı video editörü.",
     "h.once":" tek seferlik","h.explore":"İncele","h.new":"Yeni",
     "h.about.k":"Hakkımızda","h.about.h":"Neye inanıyoruz",
     "h.about.lead":"Yazılımın kiralanan değil, sahip olunan bir şey olması gerektiğine inanıyoruz.",
@@ -188,6 +200,9 @@ const H = {
     "h.a2.h":"Tek seferlik","h.a2.p":"Bir kere öde, hep senin. Aylık abonelik yok.",
     "h.a3.h":"Çevrimdışı","h.a3.p":"İnternet olmadan da çalışır; işini internet kesintisi durdurmaz.",
     "h.a4.h":"Sade ve hızlı","h.a4.p":"Gereksiz karmaşa yok; işini yapan, hızlı ve anlaşılır araçlar.",
+    "h.manifesto":"Bulut çağında araçların, <em>verinle birlikte</em> sana ait olmalı.",
+    "h.cta2.k":"Başla","h.cta2.h":"Hangisiyle başlayalım?","h.cta2.p":"İki ürün, tek felsefe: sahip olduğun, çevrimdışı çalışan yazılım.",
+    "h.cta2.v1":"VoyagerOne\u2019ı incele","h.cta2.v2":"Intro\u2019yu incele",
     "h.ft.privacy":"Gizlilik","h.ft.terms":"Koşullar",
   },
   en: {
@@ -198,7 +213,7 @@ const H = {
     "h.trust.1":"One-time payment","h.trust.2":"Works offline","h.trust.3":"Your data stays with you",
     "h.prod.k":"Products","h.prod.h":"Our products","h.prod.lead":"Each one stands alone, no subscription, running entirely on your device.",
     "h.v1.tag":"AI workspace","h.v1.desc":"A desktop AI that works offline with a local model and creates Word/Excel/PDF files.",
-    "h.v2.tag":"AI video editor","h.v2.desc":"Cuts to the beat, adds effects and captions — the offline CapCut alternative.",
+    "h.v2.tag":"AI video editor","h.v2.desc":"An offline video editor that cuts to the beat, adds effects and captions.",
     "h.once":" one-time","h.explore":"Explore","h.new":"New",
     "h.about.k":"About","h.about.h":"What we believe",
     "h.about.lead":"We believe software should be something you own, not something you rent.",
@@ -206,6 +221,9 @@ const H = {
     "h.a2.h":"One-time","h.a2.p":"Pay once, yours forever. No monthly subscription.",
     "h.a3.h":"Offline","h.a3.p":"Works without the internet; an outage never stops your work.",
     "h.a4.h":"Simple & fast","h.a4.p":"No needless clutter — fast, clear tools that get the job done.",
+    "h.manifesto":"In the age of the cloud, your tools should belong to you — <em>together with your data</em>.",
+    "h.cta2.k":"Start","h.cta2.h":"Which one first?","h.cta2.p":"Two products, one philosophy: software you own that works offline.",
+    "h.cta2.v1":"Explore VoyagerOne","h.cta2.v2":"Explore Intro",
     "h.ft.privacy":"Privacy","h.ft.terms":"Terms",
   }
 };

@@ -44,7 +44,7 @@ h1{font-size:var(--t-hero)} h2{font-size:var(--t-sec)} h3{font-size:var(--t-card
 h1 em{font-style:normal;color:var(--accent)}
 .mono{font:500 var(--t-mono)/1.5 var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3)}
 section{padding:clamp(64px,9vw,120px) var(--pad);border-top:1px solid var(--rule)}
-.sec-head{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-bottom:44px;align-items:start}
+.sec-head{margin-bottom:40px}
 .lead{color:var(--ink-2);max-width:62ch}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 22px;border-radius:2px;font-size:15px;font-weight:600;border:1px solid var(--ink);transition:.2s var(--ease)}
 .btn.solid{background:var(--ink);color:var(--paper)} .btn.solid:hover{background:var(--accent);border-color:var(--accent)}
@@ -81,7 +81,7 @@ section{padding:clamp(64px,9vw,120px) var(--pad);border-top:1px solid var(--rule
 .demo-bar b{margin-left:8px;color:#8FB4FF;font:600 12px/1 var(--mono);letter-spacing:.1em}
 .demo-stage{aspect-ratio:16/9;position:relative;background:linear-gradient(120deg,#1a2embed 0,#101722 100%);display:grid;place-items:center;overflow:hidden}
 .demo-stage{background:radial-gradient(120% 120% at 30% 20%,#22304d,#0d1420)}
-.demo-mark{width:84px;height:80px}
+.demo-mark{width:96px;height:83px}
 .demo-cap{position:absolute;left:0;right:0;bottom:12%;text-align:center;font:800 15px var(--body);color:#fff;letter-spacing:.02em;text-transform:uppercase}
 .demo-cap b{color:#8FB4FF}
 .demo-tl{padding:12px 14px;background:#0e131b;border-top:1px solid #1f2530;display:flex;flex-direction:column;gap:7px}
@@ -145,7 +145,6 @@ footer a:hover{color:var(--ink)}
 
 <header class="hero" id="top">
   <div>
-    <p class="mono" data-t="i.hero.kicker">WAESNA · Intro 1.0</p>
     <h1 style="margin-top:16px" data-th="i.hero.title">Çekim girer. <em>Hikâye</em> çıkar.</h1>
     <p class="lead" data-t="i.hero.lead"></p>
     <div class="cta"><a class="btn blue" href="#fiyat" data-t="i.cta.buy">Satın al</a><a class="btn line" href="#ozellik" data-t="i.cta.features">Özellikler</a></div>
@@ -154,7 +153,7 @@ footer a:hover{color:var(--ink)}
   <div class="demo" aria-hidden="true">
     <div class="demo-bar"><i></i><i></i><i></i><b>Intro</b></div>
     <div class="demo-stage">
-      <svg class="demo-mark" viewBox="0 0 104 100"><path d="M 94 18 L 55.15 63.06 A 20 20 0 1 1 55.15 36.94 L 94 82 L 94 18 Z" fill="none" stroke="#EAF0FF" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      <svg class="demo-mark" viewBox="0 0 116 100"><path d="M100 16 L100 84 L54 50 Z" fill="none" stroke="#EAF0FF" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/><circle cx="36" cy="50" r="22" fill="none" stroke="#EAF0FF" stroke-width="9"/></svg>
       <div class="demo-cap">RİTME <b>GÖRE</b> KESİLDİ</div>
     </div>
     <div class="demo-tl">
@@ -166,19 +165,19 @@ footer a:hover{color:var(--ink)}
 </header>
 
 <section id="ozellik">
-  <div class="sec-head rv"><p class="mono" data-t="i.feat.k"></p><h2 data-t="i.feat.h"></h2></div>
+  <div class="sec-head rv"><h2 data-t="i.feat.h"></h2></div>
   <div class="grid rv">
-    <div class="cell"><p class="mono" data-t="i.f1.k"></p><h3 data-t="i.f1.h"></h3><p data-t="i.f1.p"></p></div>
-    <div class="cell"><p class="mono" data-t="i.f2.k"></p><h3 data-t="i.f2.h"></h3><p data-t="i.f2.p"></p></div>
-    <div class="cell"><p class="mono" data-t="i.f3.k"></p><h3 data-t="i.f3.h"></h3><p data-t="i.f3.p"></p></div>
-    <div class="cell"><p class="mono" data-t="i.f4.k"></p><h3 data-t="i.f4.h"></h3><p data-t="i.f4.p"></p></div>
-    <div class="cell"><p class="mono" data-t="i.f5.k"></p><h3 data-t="i.f5.h"></h3><p data-t="i.f5.p"></p></div>
-    <div class="cell"><p class="mono" data-t="i.f6.k"></p><h3 data-t="i.f6.h"></h3><p data-t="i.f6.p"></p></div>
+    <div class="cell"><h3 data-t="i.f1.h"></h3><p data-t="i.f1.p"></p></div>
+    <div class="cell"><h3 data-t="i.f2.h"></h3><p data-t="i.f2.p"></p></div>
+    <div class="cell"><h3 data-t="i.f3.h"></h3><p data-t="i.f3.p"></p></div>
+    <div class="cell"><h3 data-t="i.f4.h"></h3><p data-t="i.f4.p"></p></div>
+    <div class="cell"><h3 data-t="i.f5.h"></h3><p data-t="i.f5.p"></p></div>
+    <div class="cell"><h3 data-t="i.f6.h"></h3><p data-t="i.f6.p"></p></div>
   </div>
 </section>
 
 <section id="fiyat">
-  <div class="sec-head rv"><p class="mono" data-t="i.price.k"></p><h2 data-t="i.price.h"></h2></div>
+  <div class="sec-head rv"><h2 data-t="i.price.h"></h2></div>
   <div class="buybox rv">
     <div>
       <div class="price" id="introPrice">$9.99<small data-t="i.price.note"></small></div>
@@ -191,7 +190,7 @@ footer a:hover{color:var(--ink)}
 </section>
 
 <section id="indir">
-  <div class="sec-head rv"><p class="mono" data-t="i.dl.k"></p><h2 data-t="i.dl.h"></h2></div>
+  <div class="sec-head rv"><h2 data-t="i.dl.h"></h2></div>
   <div class="dl-grid rv">
     <div class="dl" id="dlMac"><b>macOS</b><span data-t="i.dl.mac"></span><a href="#" data-t="i.dl.get"></a></div>
     <div class="dl" id="dlWin"><b>Windows</b><span data-t="i.dl.win"></span><a href="#" data-t="i.dl.get"></a></div>
@@ -215,10 +214,10 @@ const I = {
     "i.hero.title":"Çekim girer. <em>Hikâye</em> çıkar.",
     "i.hero.lead":"Intro; kliplerini ritme göre kesen, efekt basan, altyazı ekleyen bir yapay zekâ video editörüdür. Tamamen bilgisayarında, çevrimdışı çalışır — bulut yok, kota yok, filigran yok.",
     "i.trust.1":"Tek seferlik ödeme","i.trust.2":"Tamamen çevrimdışı","i.trust.3":"macOS · Windows · Linux","i.trust.4":"Filigran yok",
-    "i.feat.k":"01 — Özellikler","i.feat.h":"CapCut'ın yaptığını, aboneliksiz ve cihazında",
+    "i.feat.k":"01 — Özellikler","i.feat.h":"Profesyonel kurgu, aboneliksiz ve cihazında",
     "i.f1.k":"Ritim","i.f1.h":"Otomatik ritim algılama","i.f1.p":"Müziğin BPM'ini ve vuruşlarını bulur; kesimleri ve efektleri tam ritme oturtur.",
     "i.f2.k":"Efektler","i.f2.h":"Shake, flaş, zoom, glitch","i.f2.p":"Her efektin alt türleri var: darbe/yatay/dikey shake, beyaz/siyah flaş, dijital/scan glitch, yön/zoom blur.",
-    "i.f3.k":"Oto-kurgu","i.f3.h":"Tek tuş tarifler","i.f3.p":"Temizle, Oto Özet, Reels'e çevir, Phonk, Estetik — tek tıkla profesyonel kurgu.",
+    "i.f3.k":"Oto-kurgu","i.f3.h":"Tek tuş tarifler","i.f3.p":"Temizle, Oto Özet, Dikey kısa video, Phonk, Estetik — tek tıkla profesyonel kurgu.",
     "i.f4.k":"Altyazı","i.f4.h":"Cihazında altyazı","i.f4.p":"Konuşmayı kelime kelime yazıya döker, dolgu kelimeleri temizler. İnternet gerekmez.",
     "i.f5.k":"Yazı","i.f5.h":"Her font seçilebilir","i.f5.p":"Sistemindeki tüm fontları kullanır; başlık ve altyazıları dilediğin yazı tipiyle.",
     "i.f6.k":"Komut","i.f6.h":"Yazarak düzenle","i.f6.p":"“sessizlikleri kes, 9:16 yap, ritme göre shake ekle” yaz; anında uygular.",
@@ -238,10 +237,10 @@ const I = {
     "i.hero.title":"Footage in. <em>Story</em> out.",
     "i.hero.lead":"Intro is an AI video editor that cuts your clips to the beat, adds effects and captions. It runs entirely on your computer, offline — no cloud, no quotas, no watermark.",
     "i.trust.1":"One-time payment","i.trust.2":"Fully offline","i.trust.3":"macOS · Windows · Linux","i.trust.4":"No watermark",
-    "i.feat.k":"01 — Features","i.feat.h":"What CapCut does — without a subscription, on your device",
+    "i.feat.k":"01 — Features","i.feat.h":"Pro editing, no subscription, on your device",
     "i.f1.k":"Rhythm","i.f1.h":"Automatic beat detection","i.f1.p":"Finds the music's BPM and beats, then lands your cuts and effects exactly on the beat.",
     "i.f2.k":"Effects","i.f2.h":"Shake, flash, zoom, glitch","i.f2.p":"Every effect has variants: impact/horizontal/vertical shake, white/black flash, digital/scan glitch, motion/zoom blur.",
-    "i.f3.k":"Auto-edit","i.f3.h":"One-tap recipes","i.f3.p":"Clean up, Auto highlight, Make a Reel, Phonk, Aesthetic — a pro edit in one click.",
+    "i.f3.k":"Auto-edit","i.f3.h":"One-tap recipes","i.f3.p":"Clean up, Auto highlight, Vertical short, Phonk, Aesthetic — a pro edit in one click.",
     "i.f4.k":"Captions","i.f4.h":"On-device captions","i.f4.p":"Transcribes speech word by word and removes filler words. No internet needed.",
     "i.f5.k":"Type","i.f5.h":"Any font, your choice","i.f5.p":"Uses every font on your system for titles and captions, CorelDRAW-style.",
     "i.f6.k":"Command","i.f6.h":"Edit by typing","i.f6.p":"Type “cut the silences, make it 9:16, add shake on the beat” — it applies instantly.",
