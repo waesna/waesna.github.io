@@ -6,33 +6,22 @@
 <title>WAESNA — Sayfa bulunamadı</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/assets/site.css">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{min-height:100svh;background:#f5f5f3;color:#080808;
-  font-family:"Archivo","Helvetica Neue",Arial,sans-serif;
-  display:grid;place-items:center;padding:6vw;text-align:center}
-.mono{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:11px;font-weight:500;
-  letter-spacing:.18em;text-transform:uppercase;color:#8a8a82}
-svg{width:110px;height:auto;color:#080808;margin-bottom:34px}
-h1{font-size:clamp(56px,11vw,140px);font-weight:800;letter-spacing:-.06em;line-height:.85;margin:18px 0}
-p{color:#55554f;font-size:18px;max-width:440px;margin:0 auto 34px;line-height:1.5}
-a{display:inline-flex;align-items:center;gap:9px;padding:15px 26px;border-radius:999px;
-  background:#080808;color:#f5f5f3;text-decoration:none;
-  font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:500;
-  letter-spacing:.13em;text-transform:uppercase;transition:transform .25s cubic-bezier(.22,1,.36,1)}
-a:hover{transform:translateY(-2px)}
+body{min-height:100svh;display:grid;place-items:center;padding:6vw;overflow:hidden;position:relative}
+.ghost{animation:none}
+main{position:relative;z-index:1}
+h1{font-size:clamp(64px,15vw,240px);margin:0 0 22px}
+p{font-size:20px;max-width:34ch;margin-bottom:30px}
 </style>
 </head>
 <body>
-<div>
-  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 319 226" fill="currentColor" fill-rule="evenodd" role="img" aria-label="waesna-mark"><path d="M 318.75 16.75 L 225.00 16.75 L 202.00 57.00 L 215.25 85.75 L 242.25 39.75 L 273.75 41.00 L 199.75 170.75 L 159.00 105.00 L 120.25 171.75 L 44.00 41.00 L 73.50 40.00 L 101.25 87.25 L 115.75 58.50 L 92.25 17.25 L 0.00 18.50 L 118.00 225.75 L 159.50 154.25 L 201.00 223.50 Z M 159.75 0.00 L 102.00 108.50 L 116.00 133.25 L 158.75 59.75 L 196.25 125.50 L 211.00 100.75 Z"/></svg>
-  <p class="mono">Hata 404</p>
-  <h1>Kayıp<br>sinyal.</h1>
-  <p>Aradığın sayfa burada değil. Taşınmış ya da hiç var olmamış olabilir.</p>
-  <a href="/">Ana sayfaya dön</a>
-</div>
+<svg class="ghost" viewBox="0 0 100 100" aria-hidden="true"><path pathLength="1" d="M10 26.8L56.7 80.5" stroke-width="20"/><path pathLength="1" d="M84.8 27.8L90.7 18.5" stroke-width="18.4"/></svg>
+<main>
+  <h1 class="d">404.<br>Burada<br>yok.</h1>
+  <p>Aradığın sayfa taşınmış ya da hiç var olmamış olabilir.</p>
+  <a class="btn solid" href="/">Ana sayfaya dön</a>
+</main>
 </body>
 </html>

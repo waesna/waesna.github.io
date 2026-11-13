@@ -44,31 +44,20 @@ def md(body: str) -> str:
     return "\n".join(out)
 
 
-def style() -> str:
-    """index.html'deki tokenları birebir kullan — iki sayfa aynı tasarımda kalsın."""
-    src = (HERE / "index.html").read_text(encoding="utf-8")
-    tokens = re.search(r":root\{(.*?)\}", src, re.S).group(0)
-    dark = re.search(r"@media \(prefers-color-scheme:dark\)\{:root:not\(\[data-theme=light\]\)\{.*?\}\}", src, re.S).group(0)
-    return tokens + "\n" + dark + """
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:var(--paper);color:var(--ink);font:var(--t-body)/1.7 var(--body);-webkit-font-smoothing:antialiased}
-a{color:var(--accent)}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:14px var(--pad);border-bottom:1px solid var(--rule)}
-.logo{display:flex;align-items:center;gap:11px;font:600 15px/1 var(--display);letter-spacing:.16em;color:var(--ink);text-decoration:none}
-.logo img{height:24px;width:auto}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .logo img{filter:invert(1)}}
-.mono{font:500 var(--t-mono)/1.5 var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3)}
-main{max-width:780px;margin:0 auto;padding:clamp(40px,6vw,80px) var(--pad) 90px}
-h1{font:600 clamp(32px,4vw,46px)/1.08 var(--display);letter-spacing:-.02em;margin:14px 0 10px}
-h2{font:600 26px/1.2 var(--display);margin:54px 0 10px;padding-top:26px;border-top:1px solid var(--rule)}
-h3{font:600 17px/1.35 var(--body);margin:26px 0 6px}
-p,li{color:var(--ink-2);margin-bottom:10px}
-ul{padding-left:20px}
-.meta{color:var(--ink-3);font-size:var(--t-small);margin-bottom:26px}
-.langbar{display:flex;gap:10px;font-size:var(--t-small);margin-bottom:8px}
-footer{border-top:1px solid var(--rule);padding:28px var(--pad) 50px;font-size:13px;color:var(--ink-3);
-  display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap}
+def style():
+    return """
+main{max-width:820px;margin:0 auto;padding:clamp(48px,7vw,100px) var(--pad) 110px}
+main>.mono{font-weight:600;color:var(--gray);font-size:14px}
+h1{font:800 clamp(38px,6vw,84px)/.95 var(--display);font-stretch:75%;letter-spacing:-.022em;margin:14px 0 18px}
+h2{font:800 clamp(28px,3.4vw,44px)/1 var(--display);font-stretch:75%;letter-spacing:-.018em;margin:60px 0 14px;padding-top:28px;border-top:2px solid var(--ink)}
+h3{font:600 17px/1.35 var(--body);margin:28px 0 6px}
+p,li{color:#333;margin-bottom:10px}ul{padding-left:20px}
+main a{text-decoration:underline;text-underline-offset:3px}
+.meta{color:var(--gray);font-size:14px;margin-bottom:22px}
+.langbar{display:flex;gap:16px;font-weight:600;margin-bottom:8px}
+.back{font-size:14px}
+footer{border-top:1px solid var(--rule);padding:28px var(--pad) 50px;font-size:13px;color:var(--gray);display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap}
+footer a:hover{color:var(--ink)}
 """
 
 
@@ -85,11 +74,11 @@ def page(title, docs_by_lang, ids, version):
 <title>{html.escape(title)} — WAESNA</title>
 <meta name="robots" content="index,follow">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600&family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
 <style>{style()}</style></head><body>
-<nav class="nav"><a class="logo" href="./"><img src="assets/waesna-mark.png" alt="WAESNA">WAESNA</a>
-<a href="./" style="font-size:14px;color:var(--ink-2);text-decoration:none">← Ana sayfa</a></nav>
+<nav class="nav on"><div class="wrap"><a class="logo" href="./"><img src="assets/waesna-mark.png" alt="" width="704" height="389">WAESNA</a><a class="back" href="./">← Ana sayfa</a></div></nav>
 <main><p class="mono">VoyagerOne</p><h1>{html.escape(title)}</h1>
 <p class="meta">Yürürlük / effective: {version} · Eray Mert Özüduru · <a href="mailto:{EMAIL}">{EMAIL}</a></p>
 <div class="langbar"><a href="#tr">Türkçe</a><a href="#en">English</a></div>

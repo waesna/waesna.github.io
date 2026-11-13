@@ -6,7 +6,7 @@
 <title>VoyagerOne — Bilgisayarında çalışan yapay zekâ · WAESNA</title>
 <meta name="description" content="VoyagerOne; macOS, Windows ve Linux için yapay zekâ çalışma alanı. Yerel modelle internetsiz çalışır, Word/Excel/PDF üretir, abonelik yok.">
 <meta name="theme-color" content="#FFFFFF">
-<link rel="canonical" href="https://waesna.github.io/">
+<link rel="canonical" href="https://waesna.github.io/voyagerone.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="VoyagerOne — AI that runs on your computer">
 <meta property="og:description" content="Works offline with a local model, creates Word/Excel/PDF files, no subscription.">
@@ -15,251 +15,115 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"VoyagerOne","operatingSystem":"macOS, Windows, Linux",
  "applicationCategory":"ProductivityApplication","offers":{"@type":"Offer","price":"149","priceCurrency":"USD"},
  "publisher":{"@type":"Organization","name":"WAESNA","url":"https://waesna.github.io/"}}
 </script>
-<style>
-@font-face{font-family:"Waesna";src:url("assets/fonts/Waesna-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"Waesna";src:url("assets/fonts/Waesna-Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:"Waesna";src:url("assets/fonts/Waesna-Bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:"Waesna";src:url("assets/fonts/Waesna-Italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
-@font-face{font-family:"Waesna";src:url("assets/fonts/Waesna-BoldItalic.woff2") format("woff2");font-weight:700;font-style:italic;font-display:swap}
-:root{
-  --paper:#FFFFFF; --raise:#FAFAFA; --ink:#111111; --ink-2:#555555; --ink-3:#8A8A8A;
-  --rule:#E5E5E5; --accent:#111111; --accent-2:#333333; --good:#2F8F5B; --bad:#B4533A;
-  --display:"Waesna","Bricolage Grotesque",Georgia,serif; --body:"Geist","Helvetica Neue",Arial,sans-serif; --mono:"Geist Mono",ui-monospace,Menlo,monospace;
-  --pad:clamp(20px,5vw,84px); --ease:cubic-bezier(.2,.7,.3,1);
-  --t-hero:clamp(40px,5.6vw,76px); --t-sec:clamp(28px,3.2vw,40px); --t-card:19px; --t-body:16px; --t-small:14px; --t-mono:12px;
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
-  --paper:#0D0D0D; --raise:#171717; --ink:#F5F5F5; --ink-2:#B3B3B3; --ink-3:#808080; --rule:#2A2A2A;
-}}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--paper);color:var(--ink);font:var(--t-body)/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
-h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em;line-height:1.05}
-h2{font-size:var(--t-sec)} h3{font-size:var(--t-card);letter-spacing:-.01em;line-height:1.25}
-.mono{font:500 var(--t-mono)/1.5 var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3)}
-section{padding:clamp(64px,9vw,128px) var(--pad);border-top:1px solid var(--rule)}
-.sec-head{display:grid;grid-template-columns:200px 1fr;gap:28px;margin-bottom:44px;align-items:start}
-.lead{color:var(--ink-2);max-width:62ch}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 22px;border-radius:2px;font-size:15px;font-weight:600;border:1px solid var(--ink);transition:.2s var(--ease)}
-.btn.solid{background:var(--ink);color:var(--paper)} .btn.solid:hover{background:var(--accent);border-color:var(--accent)}
-.btn.line:hover{background:var(--ink);color:var(--paper)}
-
-/* nav */
-.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:13px var(--pad);
-  background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
-.nav.on{border-bottom-color:var(--rule)}
-.logo{display:flex;align-items:center;gap:11px;font:600 15px/1 var(--display);letter-spacing:.16em}
-.logo img{height:26px;width:auto;display:block}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .logo img{filter:invert(1)}}
-.nav-links{display:flex;gap:24px;font-size:var(--t-small);color:var(--ink-2)} .nav-links a:hover{color:var(--ink)}
-.nav-r{display:flex;align-items:center;gap:14px}
-.lang{display:flex;border:1px solid var(--rule);border-radius:2px;overflow:hidden}
-.lang button{padding:7px 10px;font:500 12px/1 var(--mono);letter-spacing:.08em;color:var(--ink-3)}
-.lang button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
-@media (max-width:860px){.nav-links{display:none}.nav .btn{display:none}}
-
-/* hero */
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,72px);align-items:center;padding:clamp(40px,7vw,96px) var(--pad) clamp(48px,7vw,96px);border-top:0}
-.hero h1{font-size:var(--t-hero);font-weight:700;letter-spacing:-.03em}
-.hero h1 em{font-style:normal;color:var(--accent)}
-.hero .lead{font-size:18px;margin:22px 0 30px}
-.cta{display:flex;gap:12px;flex-wrap:wrap}
-.trust{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;padding-top:22px;border-top:1px solid var(--rule);font-size:var(--t-small);color:var(--ink-2)}
-.trust span::before{content:"✓";color:var(--good);font-weight:700;margin-right:7px}
-
-/* demo kartı */
-.demo{background:#FFFFFF;border:1px solid #E5E5E5;color:#111111;border-radius:18px;padding:0 0 22px;box-shadow:0 30px 80px rgba(0,0,0,.10);overflow:hidden;font-size:15px}
-.demo-bar{display:flex;align-items:center;gap:8px;padding:14px 18px;border-bottom:1px solid #E5E5E5;font:500 12px/1 var(--mono);color:#8A8A8A}
-.demo-bar i{width:10px;height:10px;border-radius:50%;background:#D4D4D4}
-.demo-bar b{margin-left:8px;font-weight:500}
-.msg{margin:16px 18px 0;padding:12px 16px;border-radius:14px;max-width:86%;line-height:1.4;opacity:0}
-.msg.u{margin-left:auto;background:#EDEDED;border-bottom-right-radius:4px}
-.msg.a{background:#F7F7F7;border:1px solid #E5E5E5;border-bottom-left-radius:4px}
-.file{display:flex;align-items:center;gap:12px;margin-top:10px;padding:10px 12px;border-radius:10px;background:#F7F7F7;border:1px solid #E5E5E5}
-.file i{width:34px;height:40px;border-radius:6px;display:grid;place-items:center;font:600 10px/1 var(--mono);color:#fff;font-style:normal}
-.file b{display:block;font:500 14px/1.2 var(--mono)} .file span{font:400 12px/1.2 var(--mono);color:#555555}
-@keyframes show{to{opacity:1}}
-.demo .m1{animation:show .4s var(--ease) .4s forwards}
-.demo .m2{animation:show .4s var(--ease) 1.4s forwards}
-.demo .m3{animation:show .4s var(--ease) 2.6s forwards}
-.demo .m4{animation:show .4s var(--ease) 3.6s forwards}
-@media (prefers-reduced-motion:reduce){.demo .msg{animation:none;opacity:1}}
-
-/* sorun şeridi */
-.pain{background:var(--ink);color:var(--paper);border-top:0}
-.pain .mono{color:var(--accent-2)}
-.pain-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#E5E5E5;margin:26px 0 30px;border:1px solid #E5E5E5}
-.pain-grid div{background:var(--ink);padding:26px 22px;font:600 20px/1.3 var(--display)}
-.pain-grid div::before{content:"✕";display:block;color:var(--bad);font:700 16px/1 var(--mono);margin-bottom:14px}
-.pain-fix{font:600 clamp(22px,2.4vw,30px)/1.25 var(--display);color:var(--accent-2)}
-@media (max-width:860px){.pain-grid{grid-template-columns:1fr 1fr}}
-
-/* ızgaralar */
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
-.cell{background:var(--raise);padding:28px 26px;display:flex;flex-direction:column;gap:9px}
-.cell p{color:var(--ink-2);font-size:15px} .cell .mono{margin-bottom:6px;color:var(--accent)}
-
-/* karşılaştırma */
-.cmp{width:100%;border-collapse:collapse;border:1px solid var(--rule);background:var(--raise);font-size:15px}
-.cmp th,.cmp td{padding:16px 20px;border-top:1px solid var(--rule);text-align:left;vertical-align:top}
-.cmp thead th{border-top:0;font:500 var(--t-mono)/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
-.cmp thead th:last-child{color:var(--accent)}
-.cmp td:first-child{color:var(--ink-3);width:28%}
-.cmp td:nth-child(2){color:var(--ink-2)}
-.cmp td:last-child{font-weight:600;background:color-mix(in srgb,var(--accent) 7%,transparent)}
-.cmp-note{margin-top:14px;font-size:13px;color:var(--ink-3)}
-
-/* adımlar, teknik */
-.steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
-.step{background:var(--raise);padding:26px}
-.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);display:block;font:500 var(--t-mono)/1 var(--mono);color:var(--accent);margin-bottom:16px}
-.step p{color:var(--ink-2);font-size:15px;margin-top:6px}
-.spec{border:1px solid var(--rule)}
-.spec div{display:grid;grid-template-columns:230px 1fr;gap:18px;padding:15px 22px;border-top:1px solid var(--rule);font-size:15px}
-.spec div:first-child{border-top:0} .spec dt{color:var(--ink-3);font-size:var(--t-small)} .spec dd{color:var(--ink-2)}
-
-/* ürünler */
-.prods{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.prod-card{position:relative;display:flex;flex-direction:column;gap:12px;padding:28px;border:1px solid var(--rule);border-radius:4px;background:var(--raise);transition:.25s var(--ease)}
-.prod-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 18px 44px -28px rgba(0,0,0,.5)}
-.pc-logo{width:58px;height:58px;display:grid;place-items:center;border-radius:13px;overflow:hidden;background:var(--paper)}
-.pc-logo img{width:100%;height:100%;object-fit:contain}
-.pc-logo.in{background:#0B0E13;padding:11px}
-.pc-desc{color:var(--ink-2);font-size:var(--t-small);flex:1}
-.pc-foot{display:flex;align-items:center;justify-content:space-between;margin-top:6px;padding-top:15px;border-top:1px solid var(--rule)}
-.pc-price{font:600 22px/1 var(--display);letter-spacing:-.02em}
-.pc-price small{font:400 12px/1 var(--body);color:var(--ink-3);margin-left:5px}
-.pc-cta{font-size:14px;font-weight:600;color:var(--accent)}
-.pc-cta::after{content:" →";transition:.2s var(--ease)}
-.prod-card:hover .pc-cta::after{margin-left:3px}
-.pc-badge{position:absolute;top:16px;right:16px;font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--paper);background:var(--accent);padding:5px 9px;border-radius:2px}
-@media(max-width:760px){.prods{grid-template-columns:1fr}}
-/* fiyat */
-.plans{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
-.plan{background:var(--raise);padding:28px 24px;display:flex;flex-direction:column;gap:12px}
-.plan.hl{background:var(--paper);box-shadow:inset 0 0 0 2px var(--accent)}
-.price{font:600 34px/1 var(--display);letter-spacing:-.02em}
-.price span{font:400 13px/1 var(--body);color:var(--ink-3);display:block;margin-top:7px}
-.plan ul{list-style:none;display:flex;flex-direction:column;gap:7px;font-size:var(--t-small);color:var(--ink-2)}
-.plan li::before{content:"—";color:var(--accent);margin-right:8px}
-.plan .btn{margin-top:auto}
-
-/* indirme */
-.dl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
-.dl{position:relative;background:var(--raise);padding:28px 26px;display:flex;flex-direction:column;gap:8px;transition:.2s var(--ease)}
-.dl svg{width:26px;height:26px;fill:currentColor} .dl b{font-size:17px;font-weight:600}
-.dl:hover{background:var(--ink);color:var(--paper)}
-.dl.mine{box-shadow:inset 0 0 0 2px var(--accent)}
-.dl .yours{position:absolute;top:14px;right:14px;font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:#fff;padding:5px 8px;border-radius:2px}
-.dl[aria-disabled=true]{opacity:.45} .dl[aria-disabled=true]:hover{background:var(--raise);color:inherit}
-
-/* sss */
-details{border-top:1px solid var(--rule);padding:16px 0} details:last-of-type{border-bottom:1px solid var(--rule)}
-summary{cursor:pointer;font-weight:500;list-style:none;display:flex;justify-content:space-between;gap:20px}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";color:var(--accent);font-family:var(--mono)} details[open] summary::after{content:"–"}
-details p{color:var(--ink-2);font-size:15px;margin-top:10px;max-width:72ch}
-
-footer{padding:34px var(--pad) 90px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--ink-3)}
-
-/* talep formu */
-dialog.rq{margin:auto;width:min(560px,calc(100% - 32px));max-height:calc(100% - 32px);border:1px solid var(--rule);background:var(--paper);color:var(--ink);padding:0;border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,.3)}
-dialog.rq::backdrop{background:rgba(0,0,0,.45);backdrop-filter:blur(3px)}
-.rq form{padding:30px 28px 26px;display:flex;flex-direction:column;gap:14px}
-.rq h3{font-size:26px}.rq .lead{font-size:var(--t-small)}
-.rq label{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--ink-3)}
-.rq input,.rq select,.rq textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--raise);border:1px solid var(--rule);border-radius:2px;padding:11px 12px;width:100%}
-.rq input:focus,.rq select:focus,.rq textarea:focus{outline:2px solid var(--accent);outline-offset:0;border-color:transparent}
-.rq .two{display:grid;grid-template-columns:1fr 120px;gap:12px}
-.rq .ck{flex-direction:row;align-items:flex-start;gap:10px;color:var(--ink-2);font-size:13px;line-height:1.5}
-.rq .ck input{width:18px;height:18px;flex:0 0 18px;margin-top:2px;accent-color:var(--accent)}
-.rq .ck a{text-decoration:underline}
-.rq .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
-.rq .acts{display:flex;gap:10px;margin-top:4px}.rq .acts .btn{flex:1}
-.rq .note{font-size:14px;min-height:1.4em}.rq .note.err{color:#B4432F}.rq .note.ok{color:var(--ink);font-weight:500}
-@media (max-width:560px){.rq .two{grid-template-columns:1fr}}
-
-/* mobilde sabit alt çağrı */
-.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:none;justify-content:center;padding:15px;border-radius:12px;
-  background:var(--ink);color:var(--paper);font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.25);transform:translateY(130%);visibility:hidden;transition:transform .3s var(--ease),visibility .3s}
-.sticky.show{transform:none;visibility:visible}
-@media (max-width:860px){.sticky{display:flex}}
-
-.rv{opacity:0;transform:translateY(14px);transition:opacity .5s var(--ease),transform .5s var(--ease)} .rv.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
-@media (max-width:900px){
-  .hero{grid-template-columns:1fr}.sec-head{grid-template-columns:1fr;gap:12px;margin-bottom:30px}
-  .grid,.steps,.dl-grid{grid-template-columns:1fr}.plans{grid-template-columns:1fr 1fr}
-  .spec div{grid-template-columns:1fr;gap:4px}.cmp td:first-child{width:auto}
-}
-@media (max-width:560px){.plans{grid-template-columns:1fr}.pain-grid{grid-template-columns:1fr}.cmp{font-size:14px}.cmp th,.cmp td{padding:12px}}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--accent:#F5F5F5;--accent-2:#CFCFCF}.dl .yours{color:#111}img.inv{filter:invert(1)}}
-</style>
+<link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
+<a class="skip" href="#urun" data-t="skip">İçeriğe geç</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="vm" viewBox="0 0 100 100"><path d="M10 26.8L56.7 80.5" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round"/><path d="M84.8 27.8L90.7 18.5" fill="none" stroke="currentColor" stroke-width="18.4" stroke-linecap="round"/></symbol>
+</defs></svg>
 
-<nav class="nav" id="nav">
-  <a class="logo" href="index.html"><img src="assets/waesna-mark.png" alt="WAESNA" width="704" height="389">WAESNA</a>
+<nav class="nav" id="nav"><div class="wrap">
+  <a class="logo" href="index.html"><img src="assets/waesna-mark.png" alt="" width="704" height="389">WAESNA</a>
   <div class="nav-links">
     <a href="#urun" data-t="nav.product">Ürün</a><a href="#karsilastir" data-t="nav.compare">Karşılaştır</a>
-    <a href="#fiyat" data-t="nav.pricing">Fiyat</a><a href="index.html#urunler" data-t="nav.products">Ürünler</a><a href="#indir" data-t="nav.download">İndir</a><a href="#sss" data-t="nav.faq">SSS</a>
+    <a href="#fiyat" data-t="nav.pricing">Fiyat</a><a href="#indir" data-t="nav.download">İndir</a><a href="#sss" data-t="nav.faq">SSS</a>
   </div>
-  <div class="nav-r">
-    <div class="lang" role="group" aria-label="Language"><button data-lang="tr">TR</button><button data-lang="en">EN</button></div>
-    <a class="btn solid" href="#indir" data-t="cta.try">7 gün ücretsiz dene</a>
-  </div>
-</nav>
+  <div class="lang" role="group" aria-label="Language"><button data-lang="tr">TR</button><button data-lang="en">EN</button></div>
+  <a class="btn solid" href="#indir" data-t="cta.try">7 gün ücretsiz dene</a>
+</div></nav>
 
 <header class="hero" id="top">
-  <div>
-    <p class="mono" data-t="hero.kicker">WAESNA · VoyagerOne 1.0</p>
-    <h1 style="margin-top:18px" data-th="hero.title">Yapay zekâ <em>senin</em> bilgisayarında. Abonelik yok.</h1>
-    <p class="lead" data-t="hero.lead"></p>
-    <div class="cta"><a class="btn solid" href="#indir" data-t="cta.try">7 gün ücretsiz dene</a><a class="btn line" href="#fiyat" data-t="cta.pricing">Fiyatlar</a></div>
-    <div class="trust"><span data-t="trust.1"></span><span data-t="trust.2"></span><span data-t="trust.3"></span><span data-t="trust.4"></span></div>
-  </div>
-  <div class="demo" aria-hidden="true">
-    <div class="demo-bar"><i></i><i></i><i></i><b>VoyagerOne</b></div>
-    <div class="msg u m1" data-t="demo.user"></div>
-    <div class="msg a m2"><span data-t="demo.ai"></span>
-      <div class="file"><i style="background:#111111">XLSX</i><div><b data-t="demo.f1">sales-report.xlsx</b><span data-t="demo.saved"></span></div></div></div>
-    <div class="msg u m3" data-t="demo.user2"></div>
-    <div class="msg a m4"><div class="file" style="margin-top:0"><i style="background:#111111">PPTX</i><div><b data-t="demo.f2">presentation.pptx</b><span data-t="demo.ready"></span></div></div></div>
+  <svg class="ghost" viewBox="0 0 100 100" aria-hidden="true"><path pathLength="1" d="M10 26.8L56.7 80.5" stroke-width="20"/><path pathLength="1" d="M84.8 27.8L90.7 18.5" stroke-width="18.4"/></svg>
+  <div class="wrap">
+    <h1 class="d" data-th="hero.title">Yapay zekâ senin<br>bilgisayarında.<br>Abonelik yok.</h1>
+    <div class="hero-row">
+      <div>
+        <p class="lead" data-t="hero.lead"></p>
+        <div class="cta"><a class="btn solid" href="#indir" data-t="cta.try">7 gün ücretsiz dene</a><a class="btn line" href="#fiyat" data-t="cta.pricing">Fiyatlar</a></div>
+      </div>
+      <ul class="facts"><li data-t="trust.1"></li><li data-t="trust.2"></li><li data-t="trust.3"></li><li data-t="trust.4"></li></ul>
+    </div>
+
+    <div class="win" id="win" data-net="on" role="group" aria-label="VoyagerOne">
+      <div class="win-bar">
+        <span class="win-title"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#vm"/></svg>VoyagerOne</span>
+        <span class="win-hint" data-t="demo.hint"></span>
+        <button class="sw" id="netSw" type="button" role="switch" aria-checked="true"><span data-t="demo.net"></span><i class="sw-track"><i class="sw-knob"></i></i><b class="sw-state" id="netState" data-t="demo.net.on"></b></button>
+      </div>
+      <div class="win-body">
+        <div class="win-side" aria-hidden="true"><p class="on" data-t="demo.c1"></p><p data-t="demo.c2"></p><p data-t="demo.c3"></p></div>
+        <div class="win-chat">
+          <div class="msg u m1" data-t="demo.user"></div>
+          <div class="msg a m2"><span data-t="demo.ai"></span>
+            <div class="file"><i>XLSX</i><div><b data-t="demo.f1">satis-raporu.xlsx</b><span data-t="demo.saved"></span></div></div></div>
+          <div class="msg u m3" data-t="demo.user2"></div>
+          <div class="msg a m4"><div class="file" style="margin-top:0"><i>PPTX</i><div><b data-t="demo.f2">sunum.pptx</b><span data-t="demo.ready"></span></div></div></div>
+          <div class="msg offnote m5" data-t="demo.offnote"></div>
+        </div>
+      </div>
+      <div class="win-foot"><span data-t="demo.model"></span><span><span data-t="demo.out"></span>: 0 B</span></div>
+    </div>
   </div>
 </header>
 
-<section class="pain">
-  <p class="mono rv" data-t="pain.k"></p>
-  <div class="pain-grid rv"><div data-t="pain.1"></div><div data-t="pain.2"></div><div data-t="pain.3"></div><div data-t="pain.4"></div></div>
-  <p class="pain-fix rv" data-t="pain.fix"></p>
+<section id="neden">
+  <div class="wrap">
+    <h2 class="visually-hidden" style="position:absolute;left:-9999px" data-t="pain.k"></h2>
+    <div class="strike io" id="strike">
+      <p data-t="pain.1"></p><p data-t="pain.2"></p><p data-t="pain.3"></p><p data-t="pain.4"></p>
+      <p class="fix" data-t="pain.fix"></p>
+    </div>
+  </div>
 </section>
 
-<section id="urun">
-  <div class="sec-head rv"><p class="mono" data-t="feat.k"></p><h2 data-t="feat.h"></h2></div>
-  <div class="grid rv">
-    <div class="cell"><p class="mono" data-t="f1.k"></p><h3 data-t="f1.h"></h3><p data-t="f1.p"></p></div>
-    <div class="cell"><p class="mono" data-t="f2.k"></p><h3 data-t="f2.h"></h3><p data-t="f2.p"></p></div>
-    <div class="cell"><p class="mono" data-t="f3.k"></p><h3 data-t="f3.h"></h3><p data-t="f3.p"></p></div>
-    <div class="cell"><p class="mono" data-t="f4.k"></p><h3 data-t="f4.h"></h3><p data-t="f4.p"></p></div>
-    <div class="cell"><p class="mono" data-t="f5.k"></p><h3 data-t="f5.h"></h3><p data-t="f5.p"></p></div>
-    <div class="cell"><p class="mono" data-t="f6.k"></p><h3 data-t="f6.h"></h3><p data-t="f6.p"></p></div>
+<section id="urun" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2 data-t="feat.h"></h2></div>
+    <div class="rows">
+      <div class="row"><h3 data-t="f1.h"></h3><p data-t="f1.p"></p></div>
+      <div class="row"><h3 data-t="f2.h"></h3><p data-t="f2.p"></p></div>
+      <div class="row"><h3 data-t="f3.h"></h3><p data-t="f3.p"></p></div>
+      <div class="row"><h3 data-t="f4.h"></h3><p data-t="f4.p"></p></div>
+      <div class="row"><h3 data-t="f5.h"></h3><p data-t="f5.p"></p></div>
+      <div class="row"><h3 data-t="f6.h"></h3><p data-t="f6.p"></p></div>
+    </div>
   </div>
 </section>
 
 <section id="karsilastir">
-  <div class="sec-head rv"><p class="mono" data-t="cmp.k"></p><h2 data-t="cmp.h"></h2></div>
-  <div class="rv" style="overflow-x:auto">
+  <div class="wrap">
+    <div class="cost">
+      <div>
+        <h2 data-t="cost.h"></h2>
+        <p class="lead" data-t="cost.p"></p>
+      </div>
+      <svg class="chart io" id="chart" viewBox="0 0 900 390" role="img" data-aria="cost.alt" aria-label="">
+        <polygon class="gap" points="225.5,267.9 860,30 860,267.9"/>
+        <line class="tick" x1="60" y1="30" x2="860" y2="30"/>
+        <line class="ax" x1="60" y1="330" x2="860" y2="330"/>
+        <path class="l" style="--len:860" d="M60 330L860 30" stroke-width="2.5"/>
+        <path class="l" style="--len:800" d="M60 267.9L860 267.9" stroke-width="9"/>
+        <circle class="lab" cx="225.5" cy="267.9" r="9" fill="#fff" stroke="#000" stroke-width="3"/>
+        <text class="big lab" x="860" y="14" text-anchor="end">$720</text>
+        <text class="big lab" x="860" y="248" text-anchor="end">$149</text>
+        <text class="lab" x="236" y="305" data-t="cost.cross"></text>
+        <text class="lab" x="640" y="172" data-t="cost.gap"></text>
+        <text x="60" y="366" data-t="cost.m0"></text>
+        <text x="327" y="366" text-anchor="middle" data-t="cost.m12"></text>
+        <text x="593" y="366" text-anchor="middle" data-t="cost.m24"></text>
+        <text x="860" y="366" text-anchor="end" data-t="cost.m36"></text>
+        <text class="lab" x="60" y="246" font-weight="600" fill="#000" data-t="cost.own"></text>
+        <text class="lab" x="400" y="170" text-anchor="middle" transform="rotate(-19 400 170)" data-t="cost.sub"></text>
+      </svg>
+    </div>
     <table class="cmp">
       <thead><tr><th></th><th data-t="cmp.col1"></th><th data-t="cmp.col2"></th></tr></thead>
       <tbody>
@@ -274,73 +138,86 @@ dialog.rq::backdrop{background:rgba(0,0,0,.45);backdrop-filter:blur(3px)}
   </div>
 </section>
 
-<section id="nasil">
-  <div class="sec-head rv"><p class="mono" data-t="how.k"></p><h2 data-t="how.h"></h2></div>
-  <div class="steps rv">
-    <div class="step"><h3 data-t="s1.h"></h3><p data-t="s1.p"></p></div>
-    <div class="step"><h3 data-t="s2.h"></h3><p data-t="s2.p"></p></div>
-    <div class="step"><h3 data-t="s3.h"></h3><p data-t="s3.p"></p></div>
+<section id="nasil" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2 data-t="how.h"></h2></div>
+    <div class="steps">
+      <div class="step"><h3 data-t="s1.h"></h3><p data-t="s1.p"></p></div>
+      <div class="step"><h3 data-t="s2.h"></h3><p data-t="s2.p"></p></div>
+      <div class="step"><h3 data-t="s3.h"></h3><p data-t="s3.p"></p></div>
+    </div>
   </div>
 </section>
 
-<section id="teknik">
-  <div class="sec-head rv"><p class="mono" data-t="spec.k"></p><h2 data-t="spec.h"></h2></div>
-  <dl class="spec rv">
-    <div><dt data-t="sp1.t"></dt><dd data-t="sp1.d"></dd></div><div><dt data-t="sp2.t"></dt><dd data-t="sp2.d"></dd></div>
-    <div><dt data-t="sp3.t"></dt><dd data-t="sp3.d"></dd></div><div><dt data-t="sp4.t"></dt><dd data-t="sp4.d"></dd></div>
-    <div><dt data-t="sp5.t"></dt><dd data-t="sp5.d"></dd></div><div><dt data-t="sp6.t"></dt><dd data-t="sp6.d"></dd></div>
-  </dl>
-</section>
-
-<section id="fiyat">
-  <div class="sec-head rv"><p class="mono" data-t="price.k"></p><h2 data-t="price.h"></h2></div>
-  <p class="lead rv" style="margin-bottom:34px" data-t="price.lead"></p>
-  <div class="plans rv">
-    <div class="plan"><p class="mono" data-t="p0.k"></p><div class="price"><b data-t="p0.p" style="font-weight:600"></b><span data-t="p0.s"></span></div>
-      <ul><li data-t="p0.1"></li><li data-t="p0.2"></li></ul><a class="btn line" href="#indir" data-t="p0.b"></a></div>
-    <div class="plan hl"><p class="mono">Pro</p><div class="price">$149<span data-t="p1.s"></span></div>
-      <ul><li data-t="p1.1"></li><li data-t="p1.2"></li><li data-t="p1.3"></li></ul><button class="btn solid" data-buy="pro"><span data-t="buy"></span></button></div>
-    <div class="plan"><p class="mono">Team</p><div class="price">$599<span data-t="p2.s"></span></div>
-      <ul><li data-t="p2.1"></li><li data-t="p2.2"></li><li data-t="p2.3"></li></ul><button class="btn line" data-buy="team"><span data-t="buy"></span></button></div>
-    <div class="plan"><p class="mono">Company</p><div class="price">$2,499<span data-t="p3.s"></span></div>
-      <ul><li data-t="p3.1"></li><li data-t="p3.2"></li><li data-t="p3.3"></li></ul><button class="btn line" data-buy="company"><span data-t="buy"></span></button></div>
+<section id="teknik" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2 data-t="spec.h"></h2></div>
+    <dl class="spec">
+      <div><dt data-t="sp1.t"></dt><dd data-t="sp1.d"></dd></div><div><dt data-t="sp2.t"></dt><dd data-t="sp2.d"></dd></div>
+      <div><dt data-t="sp3.t"></dt><dd data-t="sp3.d"></dd></div><div><dt data-t="sp4.t"></dt><dd data-t="sp4.d"></dd></div>
+      <div><dt data-t="sp5.t"></dt><dd data-t="sp5.d"></dd></div><div><dt data-t="sp6.t"></dt><dd data-t="sp6.d"></dd></div>
+    </dl>
   </div>
 </section>
 
-<section id="indir">
-  <div class="sec-head rv"><p class="mono" data-t="dl.k"></p><h2><span data-t="dl.h"></span> <span data-version>1.0.1</span></h2></div>
-  <div class="dl-grid rv">
-    <a class="dl" data-dl="mac" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.3 12.9c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.8-3-.8c-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.7 2.3 2.9 2.2 1.2 0 1.6-.7 3-.7s1.8.7 3 .7 2-1.1 2.8-2.2c.9-1.2 1.2-2.4 1.2-2.5 0 0-2.4-.9-2.4-3.6zM14.1 5.9c.6-.8 1.1-1.9 1-3-.9 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.5 2.8-1.3z"/></svg>
-      <b>macOS</b><span class="mono dl-file" data-t="dl.mac"></span></a>
-    <a class="dl" data-dl="windows" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.8 10.2 4.8V11H3zM11.4 4.6 21 3.3V11h-9.6zM3 12.2h7.2v6.2L3 17.4zM11.4 12.2H21v7.7l-9.6-1.3z"/></svg>
-      <b>Windows</b><span class="mono dl-file" data-t="dl.win"></span></a>
-    <a class="dl" data-dl="linux" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6c2.4 0 3.6 1.9 3.6 4.4 0 1.7.6 2.6 1.6 4.1 1.2 1.8 2.4 3.4 2.4 5.3 0 2.3-1.7 3.9-3.5 3.6-1-.2-1.4-.9-2.1-.9h-4c-.7 0-1.1.7-2.1.9-1.8.3-3.5-1.3-3.5-3.6 0-1.9 1.2-3.5 2.4-5.3 1-1.5 1.6-2.4 1.6-4.1 0-2.5 1.2-4.4 3.6-4.4z"/></svg>
-      <b>Linux</b><span class="mono dl-file" data-t="dl.lin"></span></a>
+<section id="fiyat" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2 data-t="price.h"></h2><p data-t="price.lead"></p></div>
+    <div class="plans">
+      <div class="plan"><p class="pname" data-t="p0.k"></p><div class="price"><b data-t="p0.p"></b><span data-t="p0.s"></span></div>
+        <ul><li data-t="p0.1"></li><li data-t="p0.2"></li></ul><a class="btn line" href="#indir" data-t="p0.b"></a></div>
+      <div class="plan hl"><p class="pname">Pro</p><div class="price">$149<span data-t="p1.s"></span></div>
+        <ul><li data-t="p1.1"></li><li data-t="p1.2"></li><li data-t="p1.3"></li></ul><button class="btn solid" data-buy="pro"><span data-t="buy"></span></button></div>
+      <div class="plan"><p class="pname">Team</p><div class="price">$599<span data-t="p2.s"></span></div>
+        <ul><li data-t="p2.1"></li><li data-t="p2.2"></li><li data-t="p2.3"></li></ul><button class="btn line" data-buy="team"><span data-t="buy"></span></button></div>
+      <div class="plan"><p class="pname">Company</p><div class="price">$2,499<span data-t="p3.s"></span></div>
+        <ul><li data-t="p3.1"></li><li data-t="p3.2"></li><li data-t="p3.3"></li></ul><button class="btn line" data-buy="company"><span data-t="buy"></span></button></div>
+    </div>
   </div>
 </section>
 
-<section id="sss">
-  <div class="sec-head rv"><p class="mono" data-t="faq.k"></p><h2 data-t="faq.h"></h2></div>
-  <div class="rv">
-    <details><summary data-t="q1"></summary><p data-t="a1"></p></details>
-    <details><summary data-t="q2"></summary><p data-t="a2"></p></details>
-    <details><summary data-t="q3"></summary><p data-t="a3"></p></details>
-    <details><summary data-t="q4"></summary><p data-t="a4"></p></details>
-    <details><summary data-t="q5"></summary><p data-t="a5"></p></details>
-    <details><summary data-t="q6"></summary><p data-t="a6"></p></details>
-    <details><summary data-t="q7"></summary><p data-t="a7"></p></details>
+<section id="indir" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2><span data-t="dl.h"></span> <span data-version>1.0.1</span></h2></div>
+    <div class="dl-grid">
+      <a class="dl" data-dl="mac" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.3 12.9c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.8-3-.8c-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.7 2.3 2.9 2.2 1.2 0 1.6-.7 3-.7s1.8.7 3 .7 2-1.1 2.8-2.2c.9-1.2 1.2-2.4 1.2-2.5 0 0-2.4-.9-2.4-3.6zM14.1 5.9c.6-.8 1.1-1.9 1-3-.9 0-2.1.6-2.8 1.4-.6.7-1.2 1.8-1 2.9 1 .1 2.1-.5 2.8-1.3z"/></svg>
+        <b>macOS</b><span class="dl-file" data-t="dl.mac"></span></a>
+      <a class="dl" data-dl="windows" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.8 10.2 4.8V11H3zM11.4 4.6 21 3.3V11h-9.6zM3 12.2h7.2v6.2L3 17.4zM11.4 12.2H21v7.7l-9.6-1.3z"/></svg>
+        <b>Windows</b><span class="dl-file" data-t="dl.win"></span></a>
+      <a class="dl" data-dl="linux" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6c2.4 0 3.6 1.9 3.6 4.4 0 1.7.6 2.6 1.6 4.1 1.2 1.8 2.4 3.4 2.4 5.3 0 2.3-1.7 3.9-3.5 3.6-1-.2-1.4-.9-2.1-.9h-4c-.7 0-1.1.7-2.1.9-1.8.3-3.5-1.3-3.5-3.6 0-1.9 1.2-3.5 2.4-5.3 1-1.5 1.6-2.4 1.6-4.1 0-2.5 1.2-4.4 3.6-4.4z"/></svg>
+        <b>Linux</b><span class="dl-file" data-t="dl.lin"></span></a>
+    </div>
   </div>
 </section>
 
-<section id="iletisim">
-  <div class="sec-head rv"><p class="mono" data-t="ct.k"></p><h2 data-t="ct.h"></h2></div>
-  <p class="lead rv" data-t="ct.p"></p>
-  <p class="rv" style="margin-top:18px"><a class="btn line" id="mailLink" href="#" data-t="ct.b"></a></p>
+<section id="sss" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2 data-t="faq.h"></h2></div>
+    <div class="faq">
+      <details><summary data-t="q1"></summary><p data-t="a1"></p></details>
+      <details><summary data-t="q2"></summary><p data-t="a2"></p></details>
+      <details><summary data-t="q3"></summary><p data-t="a3"></p></details>
+      <details><summary data-t="q4"></summary><p data-t="a4"></p></details>
+      <details><summary data-t="q5"></summary><p data-t="a5"></p></details>
+      <details><summary data-t="q6"></summary><p data-t="a6"></p></details>
+      <details><summary data-t="q7"></summary><p data-t="a7"></p></details>
+    </div>
+  </div>
 </section>
 
-<footer>
-  <span>© <span id="year">2026</span> WAESNA · VoyagerOne</span>
-  <span><a href="privacy.html" data-t="ft.privacy"></a> · <a href="terms.html" data-t="ft.terms"></a> · <a id="mailFoot" href="#"></a></span>
+<section class="contact" id="iletisim" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2 data-t="ct.h"></h2><p data-t="ct.p"></p></div>
+    <a class="mail" id="mailLink" href="#"></a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> WAESNA</span>
+    <span><a href="privacy.html" data-t="ft.privacy"></a> · <a href="terms.html" data-t="ft.terms"></a> · <a id="mailFoot" href="#"></a></span>
+  </div>
+  <svg class="foot-mark" viewBox="0 0 100 55.2" aria-hidden="true"><path stroke-width="14" d="M7.6 7.4L43.2 48.1M41.3 7.2L76.4 48.1"/><path stroke-width="13.8" d="M88.5 14L93.1 7.2"/></svg>
 </footer>
 
 <dialog class="rq" id="rq" aria-labelledby="rqH">
@@ -469,8 +346,20 @@ addEventListener("scroll", () => {
   const dl = document.getElementById("indir").getBoundingClientRect();
   sticky.classList.toggle("show", scrollY > innerHeight * .8 && !(dl.top < innerHeight && dl.bottom > 0));
 }, { passive: true });
-const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px" });
-document.querySelectorAll(".rv").forEach(el => io.observe(el));
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .35 });
+document.querySelectorAll(".io").forEach(el => io.observe(el));
+document.addEventListener("langchange", () => { const c = document.getElementById("chart"); c.setAttribute("aria-label", T(c.dataset.aria)); });
+
+/* demo: sohbet oynar; ağ anahtarı çevrilince aynı iş ağ olmadan sürer */
+const win = document.getElementById("win"), netSw = document.getElementById("netSw"), netState = document.getElementById("netState");
+let touched = false, autoOff;
+function play() { win.classList.remove("play"); void win.offsetWidth; win.classList.add("play"); }
+function setNet(on) {
+  win.dataset.net = on ? "on" : "off"; netSw.setAttribute("aria-checked", String(on));
+  netState.dataset.t = on ? "demo.net.on" : "demo.net.off"; netState.textContent = T(netState.dataset.t);
+}
+netSw.addEventListener("click", () => { touched = true; clearTimeout(autoOff); setNet(win.dataset.net === "off"); play(); });
+document.fonts.ready.then(() => { play(); autoOff = setTimeout(() => { if (!touched) setNet(false); }, 5600); });
 </script>
 </body>
 </html>

@@ -14,177 +14,118 @@
 <meta property="og:image" content="https://waesna.github.io/assets/og.png">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"WAESNA","url":"https://waesna.github.io/",
  "description":"Offline-first desktop software with one-time pricing.",
  "makesOffer":[{"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"VoyagerOne"},"price":"149","priceCurrency":"USD"},
  {"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"Intro"},"price":"9.99","priceCurrency":"USD"}]}
 </script>
+<link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
+<link rel="stylesheet" href="assets/site.css">
 <style>
-@font-face{font-family:"Waesna";src:url("assets/fonts/Waesna-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
-@font-face{font-family:"Waesna";src:url("assets/fonts/Waesna-Medium.woff2") format("woff2");font-weight:500;font-style:normal;font-display:swap}
-@font-face{font-family:"Waesna";src:url("assets/fonts/Waesna-Bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
-@font-face{font-family:"Waesna";src:url("assets/fonts/Waesna-Italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
-@font-face{font-family:"Waesna";src:url("assets/fonts/Waesna-BoldItalic.woff2") format("woff2");font-weight:700;font-style:italic;font-display:swap}
-:root{
-  --paper:#FFFFFF; --raise:#FAFAFA; --ink:#111111; --ink-2:#555555; --ink-3:#8A8A8A;
-  --rule:#E5E5E5; --accent:#111111; --accent-2:#333333;
-  --display:"Waesna","Bricolage Grotesque",Georgia,serif; --body:"Geist","Helvetica Neue",Arial,sans-serif; --mono:"Geist Mono",ui-monospace,Menlo,monospace;
-  --pad:clamp(20px,5vw,84px); --ease:cubic-bezier(.2,.7,.3,1);
-  --t-hero:clamp(40px,5.8vw,80px); --t-sec:clamp(28px,3.2vw,40px); --t-card:19px; --t-body:16px; --t-small:14px; --t-mono:12px;
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]){
-  --paper:#0D0D0D; --raise:#171717; --ink:#F5F5F5; --ink-2:#B3B3B3; --ink-3:#808080; --rule:#2A2A2A;
-}}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--paper);color:var(--ink);font:var(--t-body)/1.65 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
-h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.02em;line-height:1.04}
-h1{font-size:var(--t-hero)} h1 em{font-style:normal;color:var(--accent)}
-h2{font-size:var(--t-sec)} h3{font-size:var(--t-card);letter-spacing:-.01em;line-height:1.25}
-.mono{font:500 var(--t-mono)/1.5 var(--mono);letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3)}
-section{padding:clamp(64px,9vw,120px) var(--pad);border-top:1px solid var(--rule)}
-.sec-head{margin-bottom:40px}
-.lead{color:var(--ink-2);max-width:60ch}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 22px;border-radius:2px;font-size:15px;font-weight:600;border:1px solid var(--ink);transition:.2s var(--ease)}
-.btn.solid{background:var(--ink);color:var(--paper)} .btn.solid:hover{background:var(--accent);border-color:var(--accent)}
-.btn.line:hover{background:var(--ink);color:var(--paper)}
-.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:13px var(--pad);
-  background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
-.nav.on{border-bottom-color:var(--rule)}
-.logo{display:flex;align-items:center;gap:11px;font:600 15px/1 var(--display);letter-spacing:.16em}
-.logo img{height:26px;width:auto;display:block}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]) .logo img{filter:invert(1)}}
-.nav-links{display:flex;gap:24px;font-size:var(--t-small);color:var(--ink-2)} .nav-links a:hover{color:var(--ink)}
-.nav-r{display:flex;align-items:center;gap:16px}
-.lang{display:flex;border:1px solid var(--rule);border-radius:2px;overflow:hidden}
-.lang button{padding:6px 10px;font:500 12px/1 var(--mono);color:var(--ink-3)}
-.lang button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
-@media (max-width:860px){.nav-links{display:none}.nav .btn{display:none}}
-.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,64px);align-items:center;padding:clamp(52px,8vw,110px) var(--pad)}
-.hero .lead{margin-top:20px;font-size:18px}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-.trust{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:26px;font-size:var(--t-small);color:var(--ink-3)}
-.trust span{display:flex;align-items:center;gap:7px}
-.trust span::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--accent)}
-@media (max-width:920px){.hero{grid-template-columns:1fr}}
-/* hero showcase: iki ürün amblemi */
-.showcase{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.sc{aspect-ratio:1/1;border:1px solid var(--rule);border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;transition:.25s var(--ease)}
-.sc:hover{border-color:var(--accent);transform:translateY(-3px)}
-.sc img{width:44%;height:auto}
-.sc.in{background:#0B0E13}
-.sc b{font:600 13px/1 var(--display);letter-spacing:.14em;text-transform:uppercase}
-.sc.in b{color:#EAF0FF}
-/* ürünler */
-.prods{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.prod-card{position:relative;display:flex;flex-direction:column;gap:12px;padding:30px;border:1px solid var(--rule);border-radius:4px;background:var(--raise);transition:.25s var(--ease)}
-.prod-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 18px 44px -28px rgba(0,0,0,.5)}
-.pc-logo{width:58px;height:58px;display:grid;place-items:center;border-radius:13px;overflow:hidden}
-.pc-logo img{width:100%;height:100%;object-fit:contain}
-.pc-logo.in{background:#0B0E13;padding:11px}
-.pc-desc{color:var(--ink-2);font-size:var(--t-small);flex:1}
-.pc-foot{display:flex;align-items:center;justify-content:space-between;margin-top:6px;padding-top:15px;border-top:1px solid var(--rule)}
-.pc-price{font:600 22px/1 var(--display);letter-spacing:-.02em}
-.pc-price small{font:400 12px/1 var(--body);color:var(--ink-3);margin-left:5px}
-.pc-cta{font-size:14px;font-weight:600;color:var(--accent)}
-.pc-cta::after{content:" →";transition:.2s var(--ease)}
-.prod-card:hover .pc-cta::after{margin-left:3px}
-.pc-badge{position:absolute;top:16px;right:16px;font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--paper);background:var(--accent);padding:5px 9px;border-radius:2px}
-@media(max-width:760px){.prods{grid-template-columns:1fr}.showcase{grid-template-columns:1fr 1fr}}
-/* manifesto bandı */
-.band{padding:clamp(60px,9vw,110px) var(--pad);border-top:1px solid var(--rule)}
-.band p{font:600 clamp(26px,3.8vw,46px)/1.14 var(--display);letter-spacing:-.02em;max-width:22ch}
-.band em{font-style:normal;color:var(--accent)}
-.endcta .cta{margin-top:2px}
-/* hakkında */
-.vals{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
-.val{background:var(--raise);padding:26px 22px;display:flex;flex-direction:column;gap:8px}
-.val h3{font-size:16px} .val p{color:var(--ink-2);font-size:var(--t-small)}
-@media (max-width:860px){.vals{grid-template-columns:1fr 1fr}.sec-head{grid-template-columns:1fr;gap:10px}}
-@media (max-width:520px){.vals{grid-template-columns:1fr}}
-footer{padding:40px var(--pad);border-top:1px solid var(--rule);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--ink-3)}
-footer a:hover{color:var(--ink)}
-.rv{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.rv.in{opacity:1;transform:none}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--accent:#F5F5F5;--accent-2:#CFCFCF}.dl .yours{color:#111}img.inv{filter:invert(1)}}
+.manifesto{background:var(--ink);color:var(--paper);padding:clamp(72px,11vw,170px) 0}
+.manifesto p{font:800 clamp(40px,8.4vw,142px)/.94 var(--display);font-stretch:75%;letter-spacing:-.022em;max-width:15ch}
+.prods{border-bottom:2px solid var(--ink)}
+.prod{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center;margin:0 calc(var(--pad) * -1);padding:clamp(28px,4vw,60px) var(--pad);border-top:2px solid var(--ink);transition:background .25s,color .25s}
+.prod:hover{background:var(--ink);color:var(--paper)}
+.prod h3{grid-column:1/8;display:flex;align-items:center;gap:clamp(16px,2.4vw,36px);font:800 clamp(52px,10.4vw,172px)/.9 var(--display);font-stretch:75%;letter-spacing:-.022em}
+.tile{flex:none;display:grid;place-items:center;width:.78em;height:.78em;border-radius:.16em;background:var(--ink);color:var(--paper);border:1.5px solid var(--ink);transition:background .25s,color .25s,border-color .25s}
+.tile svg{width:62%;height:62%}
+.prod:hover .tile{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.meta{grid-column:8/13;display:grid;gap:16px}
+.meta .tag{font-weight:600}
+.meta .desc{color:var(--gray);max-width:38ch;transition:color .25s}
+.prod:hover .desc{color:#bdbdbd}
+.meta .foot-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding-top:14px;border-top:1px solid currentColor}
+.meta .pr{font:800 34px/1 var(--display);font-stretch:75%}.meta .pr small{font:400 14px var(--body);margin-left:8px;opacity:.7}
+.meta .go{font-weight:600;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:2px}
+@media (max-width:860px){.prod h3,.meta{grid-column:1/-1}}
+.endcta .cta{margin-top:0}
 </style>
 </head>
 <body>
+<a class="skip" href="#urunler" data-t="skip">İçeriğe geç</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <symbol id="vm" viewBox="0 0 100 100"><path d="M10 26.8L56.7 80.5" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round"/><path d="M84.8 27.8L90.7 18.5" fill="none" stroke="currentColor" stroke-width="18.4" stroke-linecap="round"/></symbol>
+  <symbol id="im" viewBox="0 0 120 100"><path d="M104 16 L56 56 A22 22 0 1 1 56 44 L104 84 Z" fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/></symbol>
+</defs></svg>
 
-<nav class="nav" id="nav">
-  <a class="logo" href="#top"><img src="assets/waesna-mark.png" alt="WAESNA" width="704" height="389">WAESNA</a>
+<nav class="nav" id="nav"><div class="wrap">
+  <a class="logo" href="#top"><img src="assets/waesna-mark.png" alt="" width="704" height="389">WAESNA</a>
   <div class="nav-links">
     <a href="#urunler" data-t="h.nav.products">Ürünler</a>
     <a href="#hakkinda" data-t="h.nav.about">Hakkımızda</a>
   </div>
-  <div class="nav-r">
-    <div class="lang" role="group" aria-label="Language"><button data-lang="tr">TR</button><button data-lang="en">EN</button></div>
-    <a class="btn solid" href="#urunler" data-t="h.cta.products">Ürünleri gör</a>
-  </div>
-</nav>
+  <div class="lang" role="group" aria-label="Language"><button data-lang="tr">TR</button><button data-lang="en">EN</button></div>
+  <a class="btn solid" href="#urunler" data-t="h.cta.products">Ürünleri gör</a>
+</div></nav>
 
 <header class="hero" id="top">
-  <div>
-    <h1 style="margin-top:16px" data-th="h.hero.title">Yazılım <em>senin</em> bilgisayarında. Abonelik yok.</h1>
-    <p class="lead" data-t="h.hero.lead"></p>
-    <div class="cta"><a class="btn solid" href="#urunler" data-t="h.cta.products">Ürünleri gör</a><a class="btn line" href="#hakkinda" data-t="h.cta.about">Hakkımızda</a></div>
-    <div class="trust"><span data-t="h.trust.1"></span><span data-t="h.trust.2"></span><span data-t="h.trust.3"></span></div>
-  </div>
-  <div class="showcase" aria-hidden="true">
-    <a class="sc" href="voyagerone.html"><img class="inv" src="assets/voyagerone-mark.png" alt=""><b>VoyagerOne</b></a>
-    <a class="sc in" href="intro.html"><img src="assets/intro-logo.svg" alt=""><b>Intro</b></a>
+  <svg class="ghost" viewBox="0 0 100 55.2" aria-hidden="true"><path pathLength="1" stroke-width="14" d="M7.6 7.4L43.2 48.1"/><path pathLength="1" stroke-width="14" d="M41.3 7.2L76.4 48.1"/><path pathLength="1" stroke-width="13.8" d="M88.5 14L93.1 7.2"/></svg>
+  <div class="wrap">
+    <h1 class="d" data-th="h.hero.title">Yazılım senin<br>bilgisayarında.<br>Abonelik yok.</h1>
+    <div class="hero-row">
+      <div>
+        <p class="lead" data-t="h.hero.lead"></p>
+        <div class="cta"><a class="btn solid" href="#urunler" data-t="h.cta.products">Ürünleri gör</a><a class="btn line" href="#hakkinda" data-t="h.cta.about">Hakkımızda</a></div>
+      </div>
+      <ul class="facts"><li data-t="h.trust.1"></li><li data-t="h.trust.2"></li><li data-t="h.trust.3"></li></ul>
+    </div>
   </div>
 </header>
 
-<section class="band"><p class="rv" data-th="h.manifesto"></p></section>
+<section class="manifesto"><div class="wrap"><p data-t="h.manifesto"></p></div></section>
 
 <section id="urunler">
-  <div class="sec-head rv"><h2 data-t="h.prod.h"></h2></div>
-  <p class="lead rv" style="margin-bottom:34px" data-t="h.prod.lead"></p>
-  <div class="prods rv">
-    <a class="prod-card" href="voyagerone.html">
-      <div class="pc-logo"><img class="inv" src="assets/voyagerone-mark.png" alt="VoyagerOne"></div>
-      <p class="mono" data-t="h.v1.tag"></p><h3>VoyagerOne</h3>
-      <p class="pc-desc" data-t="h.v1.desc"></p>
-      <div class="pc-foot"><span class="pc-price">$149<small data-t="h.once"></small></span><span class="pc-cta" data-t="h.explore"></span></div>
-    </a>
-    <a class="prod-card" href="intro.html">
-      <span class="pc-badge" data-t="h.new"></span>
-      <div class="pc-logo in"><img src="assets/intro-logo.svg" alt="Intro"></div>
-      <p class="mono" data-t="h.v2.tag"></p><h3>Intro</h3>
-      <p class="pc-desc" data-t="h.v2.desc"></p>
-      <div class="pc-foot"><span class="pc-price" id="introPrice">$9.99<small data-t="h.once"></small></span><span class="pc-cta" data-t="h.explore"></span></div>
-    </a>
+  <div class="wrap">
+    <div class="sec-head"><h2 data-t="h.prod.h"></h2><p data-t="h.prod.lead"></p></div>
+    <div class="prods">
+      <a class="prod" href="voyagerone.html">
+        <h3><span class="tile"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#vm"/></svg></span>VoyagerOne</h3>
+        <div class="meta">
+          <p class="tag" data-t="h.v1.tag"></p>
+          <p class="desc" data-t="h.v1.desc"></p>
+          <div class="foot-row"><span class="pr">$149<small data-t="h.once"></small></span><span class="go" data-t="h.explore"></span></div>
+        </div>
+      </a>
+      <a class="prod" href="intro.html">
+        <h3><span class="tile"><svg viewBox="0 0 120 100" aria-hidden="true"><use href="#im"/></svg></span>Intro</h3>
+        <div class="meta">
+          <p class="tag" data-t="h.v2.tag"></p>
+          <p class="desc" data-t="h.v2.desc"></p>
+          <div class="foot-row"><span class="pr" id="introPrice">$9.99<small data-t="h.once"></small></span><span class="go" data-t="h.explore"></span></div>
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 
-<section id="hakkinda">
-  <div class="sec-head rv"><h2 data-t="h.about.h"></h2></div>
-  <p class="lead rv" style="margin-bottom:34px" data-t="h.about.lead"></p>
-  <div class="vals rv">
-    <div class="val"><h3 data-t="h.a1.h"></h3><p data-t="h.a1.p"></p></div>
-    <div class="val"><h3 data-t="h.a2.h"></h3><p data-t="h.a2.p"></p></div>
-    <div class="val"><h3 data-t="h.a3.h"></h3><p data-t="h.a3.p"></p></div>
-    <div class="val"><h3 data-t="h.a4.h"></h3><p data-t="h.a4.p"></p></div>
+<section id="hakkinda" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2 data-t="h.about.h"></h2><p data-t="h.about.lead"></p></div>
+    <div class="rows">
+      <div class="row"><h3 data-t="h.a1.h"></h3><p data-t="h.a1.p"></p></div>
+      <div class="row"><h3 data-t="h.a2.h"></h3><p data-t="h.a2.p"></p></div>
+      <div class="row"><h3 data-t="h.a3.h"></h3><p data-t="h.a3.p"></p></div>
+      <div class="row"><h3 data-t="h.a4.h"></h3><p data-t="h.a4.p"></p></div>
+    </div>
   </div>
 </section>
 
-<section id="baslayalim" class="endcta">
-  <div class="sec-head rv"><h2 data-t="h.cta2.h"></h2></div>
-  <p class="lead rv" style="margin-bottom:26px" data-t="h.cta2.p"></p>
-  <div class="cta rv"><a class="btn solid" href="voyagerone.html" data-t="h.cta2.v1"></a><a class="btn line" href="intro.html" data-t="h.cta2.v2"></a></div>
+<section id="baslayalim" class="endcta" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2 data-t="h.cta2.h"></h2><p data-t="h.cta2.p"></p></div>
+    <div class="cta"><a class="btn solid" href="voyagerone.html" data-t="h.cta2.v1"></a><a class="btn line" href="intro.html" data-t="h.cta2.v2"></a></div>
+  </div>
 </section>
 
-<footer>
-  <span>© <span id="year">2026</span> WAESNA</span>
-  <span><a href="privacy.html" data-t="h.ft.privacy">Gizlilik</a> · <a href="terms.html" data-t="h.ft.terms">Koşullar</a> · <a id="mail" href="#">voyageroneai@gmail.com</a></span>
+<footer class="foot">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> WAESNA</span>
+    <span><a href="privacy.html" data-t="h.ft.privacy">Gizlilik</a> · <a href="terms.html" data-t="h.ft.terms">Koşullar</a> · <a id="mail" href="#">voyageroneai@gmail.com</a></span>
+  </div>
+  <svg class="foot-mark" viewBox="0 0 100 55.2" aria-hidden="true"><path stroke-width="14" d="M7.6 7.4L43.2 48.1M41.3 7.2L76.4 48.1"/><path stroke-width="13.8" d="M88.5 14L93.1 7.2"/></svg>
 </footer>
 
 <script src="config.js"></script>
@@ -193,7 +134,7 @@ const H = {
   tr: {
     "h.nav.products":"Ürünler","h.nav.about":"Hakkımızda","h.cta.products":"Ürünleri gör","h.cta.about":"Hakkımızda",
     "h.hero.kicker":"WAESNA · Yazılım stüdyosu",
-    "h.hero.title":"Yazılım <em>senin</em> bilgisayarında. Abonelik yok.",
+    "h.hero.title":"Yazılım senin<br>bilgisayarında.<br>Abonelik yok.",
     "h.hero.lead":"WAESNA; verini kendi cihazında tutan, tek seferlik ödemeyle sahip olduğun masaüstü yazılımlar geliştirir. Bulut zorunluluğu yok, kota yok — araçların gerçekten senin.",
     "h.trust.1":"Tek seferlik ödeme","h.trust.2":"Çevrimdışı çalışır","h.trust.3":"Verin sende kalır",
     "h.prod.k":"Ürünler","h.prod.h":"Ürünlerimiz","h.prod.lead":"Her biri kendi başına, aboneliksiz ve tamamen cihazında çalışır.",
@@ -206,7 +147,7 @@ const H = {
     "h.a2.h":"Tek seferlik","h.a2.p":"Bir kere öde, hep senin. Aylık abonelik yok.",
     "h.a3.h":"Çevrimdışı","h.a3.p":"İnternet olmadan da çalışır; işini internet kesintisi durdurmaz.",
     "h.a4.h":"Sade ve hızlı","h.a4.p":"Gereksiz karmaşa yok; işini yapan, hızlı ve anlaşılır araçlar.",
-    "h.manifesto":"Bulut çağında araçların, <em>verinle birlikte</em> sana ait olmalı.",
+    "h.manifesto":"Bulut çağında araçların, verinle birlikte sana ait olmalı.","skip":"İçeriğe geç",
     "h.cta2.k":"Başla","h.cta2.h":"Hangisiyle başlayalım?","h.cta2.p":"İki ürün, tek felsefe: sahip olduğun, çevrimdışı çalışan yazılım.",
     "h.cta2.v1":"VoyagerOne\u2019ı incele","h.cta2.v2":"Intro\u2019yu incele",
     "h.ft.privacy":"Gizlilik","h.ft.terms":"Koşullar",
@@ -214,7 +155,7 @@ const H = {
   en: {
     "h.nav.products":"Products","h.nav.about":"About","h.cta.products":"See products","h.cta.about":"About",
     "h.hero.kicker":"WAESNA · Software studio",
-    "h.hero.title":"Software on <em>your</em> computer. No subscription.",
+    "h.hero.title":"Software on<br>your computer.<br>No subscription.",
     "h.hero.lead":"WAESNA builds desktop software that keeps your data on your own device and that you own with a one-time payment. No forced cloud, no quotas — your tools are truly yours.",
     "h.trust.1":"One-time payment","h.trust.2":"Works offline","h.trust.3":"Your data stays with you",
     "h.prod.k":"Products","h.prod.h":"Our products","h.prod.lead":"Each one stands alone, no subscription, running entirely on your device.",
@@ -227,7 +168,7 @@ const H = {
     "h.a2.h":"One-time","h.a2.p":"Pay once, yours forever. No monthly subscription.",
     "h.a3.h":"Offline","h.a3.p":"Works without the internet; an outage never stops your work.",
     "h.a4.h":"Simple & fast","h.a4.p":"No needless clutter — fast, clear tools that get the job done.",
-    "h.manifesto":"In the age of the cloud, your tools should belong to you — <em>together with your data</em>.",
+    "h.manifesto":"In the age of the cloud, your tools should belong to you, together with your data.","skip":"Skip to content",
     "h.cta2.k":"Start","h.cta2.h":"Which one first?","h.cta2.p":"Two products, one philosophy: software you own that works offline.",
     "h.cta2.v1":"Explore VoyagerOne","h.cta2.v2":"Explore Intro",
     "h.ft.privacy":"Privacy","h.ft.terms":"Terms",
@@ -247,8 +188,6 @@ applyLang(homeLang());
 const C=typeof CONFIG!=='undefined'?CONFIG:{}; if(C.email){const m=document.getElementById("mail"); m.href="mailto:"+C.email; m.textContent=C.email;}
 document.getElementById("year").textContent=new Date().getFullYear();
 addEventListener("scroll",()=>document.getElementById("nav").classList.toggle("on",scrollY>8),{passive:true});
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}}),{threshold:.12});
-document.querySelectorAll(".rv").forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
