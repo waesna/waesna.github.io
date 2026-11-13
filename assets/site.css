@@ -225,3 +225,23 @@ details p{padding:0 0 28px;color:var(--gray);max-width:70ch}
 .rq .acts{display:flex;justify-content:flex-end;gap:10px}
 
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.msg{opacity:1!important}.chart .l{stroke-dashoffset:0}.chart .gap,.chart .lab{opacity:1}.strike p{text-decoration-color:var(--ink)}.ghost path{stroke-dashoffset:0}}
+
+/* ── ekran görüntüsü, model tablosu, altlık bilgisi ── */
+.shot{max-width:980px}
+.shot img{width:100%;height:auto;border:1.5px solid var(--ink);border-radius:14px}
+.shot figcaption{margin-top:14px;color:var(--gray);font-size:15px}
+.mdl th,.mdl td{padding:14px 16px 14px 0}
+.mdl tbody th{font:800 24px/1 var(--display);font-stretch:75%;white-space:nowrap}
+.mdl td:first-child{width:auto}
+.mdl td:nth-child(2),.mdl td:nth-child(3),.mdl td:nth-child(4){white-space:nowrap}
+.mdl td:last-child{font-weight:400;color:var(--gray)}
+.adv-h{font:800 clamp(24px,2.6vw,36px)/1.05 var(--display);font-stretch:75%;letter-spacing:-.018em;margin:clamp(40px,5vw,72px) 0 18px}
+.adv{list-style:none;display:grid;gap:12px;max-width:80ch}
+.adv li{padding-left:26px;position:relative}
+.adv li::before{content:"";position:absolute;left:0;top:.72em;width:13px;border-top:3px solid var(--ink);border-radius:3px;transform:rotate(49deg)}
+.foot .foot-info{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,48px);padding-top:clamp(36px,5vw,64px);padding-bottom:clamp(28px,4vw,48px);border-bottom:1px solid #333;font-size:15px}
+.foot-info h3{font:800 20px/1 var(--display);font-stretch:75%;color:var(--paper);margin-bottom:10px}
+.foot-info p{color:#bdbdbd;max-width:38ch}
+@media (max-width:860px){.foot .foot-info{grid-template-columns:1fr}}
+.sec-head.wide h2{grid-column:1/6}.sec-head.wide p{grid-column:6/13;max-width:62ch}
+@media (max-width:860px){.sec-head.wide h2,.sec-head.wide p{grid-column:1/-1}}

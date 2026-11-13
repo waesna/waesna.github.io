@@ -95,6 +95,26 @@
   </div>
 </section>
 
+<section id="ekran" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2 data-t="shot.h">Uygulamadan bir görüntü</h2></div>
+    <figure class="shot"><img src="assets/ui-sohbet.png" width="800" height="500" loading="lazy" alt="VoyagerOne sohbet ekranı: Python betiği içeren bir yanıt" data-alt="shot.alt"><figcaption data-t="shot.cap">Sohbet ekranı. Kod bloklarında Kopyala, Çalıştır ve Tuvalde aç düğmeleri bulunur.</figcaption></figure>
+  </div>
+</section>
+
+<section id="model" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head wide"><h2 data-t="mdl.h">Yerel modeller ve donanım</h2><p data-t="mdl.lead">VoyagerOne yerel modelleri Ollama üzerinden çalıştırır. Ollama'nın desteklediği modeller (Llama, Qwen, Gemma, Mistral ve diğerleri) uygulamada listelenir ve seçilebilir; GGUF dosyaları Ollama'ya aktarıldığında kullanılabilir. Uygulama bilgisayarınızın RAM miktarına bakıp uygun model boyutunu önerir. Önerilen başlangıç modeli qwen2.5-coder'dır.</p></div>
+    <div style="overflow-x:auto"><table class="cmp mdl">
+      <thead><tr><th data-t="mdl.c1">Katman</th><th data-t="mdl.c2">Model boyutu</th><th data-t="mdl.c3">En az RAM</th><th data-t="mdl.c4">İndirme boyutu</th><th data-t="mdl.c5">Uygun işler</th></tr></thead>
+      <tbody><tr><th scope="row">Nano</th><td>3B</td><td data-t="mdl.r1r">8 GB'ın altı</td><td>2,2 GB</td><td data-t="mdl.r1">Eski makineler ve dizüstüler: kısa sohbet, küçük düzeltmeler</td></tr><tr><th scope="row">Lite</th><td>7–8B</td><td>8 GB</td><td>4,7 GB</td><td data-t="mdl.r2">Günlük kullanım, tek dosyalık işler</td></tr><tr><th scope="row">Core</th><td>14B</td><td>16 GB</td><td>9 GB</td><td data-t="mdl.r3">Çok dosyalı görevler, kapsamlı düzenleme</td></tr><tr><th scope="row">Pro</th><td>32B</td><td>32 GB</td><td>19 GB</td><td data-t="mdl.r4">Mimari kararlar, uçtan uca uygulama üretimi</td></tr><tr><th scope="row">Max</th><td>70B</td><td>64 GB</td><td>40 GB</td><td data-t="mdl.r5">Uzun bağlam, derin muhakeme</td></tr><tr><th scope="row">Ultra</th><td>120B (MoE)</td><td>128 GB</td><td>65 GB</td><td data-t="mdl.r6">İş istasyonu: yoğun paralel çalışma</td></tr></tbody>
+    </table></div>
+    <p class="cmp-note" data-t="mdl.note">Boyutlar Q4_K_M niceleme içindir. Bağlam penceresi, en küçük katmanda 8 bin, en büyük katmanlarda 131 bin token'dır. GPU zorunlu değildir: Ollama uyumlu bir GPU bulursa kullanır, bulamazsa işlemciyle çalışır ve yanıtlar daha yavaş olur.</p>
+    <h3 class="adv-h" data-t="mdl.adv.h">Bulut hizmetlerinden farkları</h3>
+    <ul class="adv"><li data-t="mdl.a1">Yerel modelde mesajlarınız, sohbetleriniz ve dosyalarınız bilgisayarınızdan çıkmaz.</li><li data-t="mdl.a2">Aylık ücret yoktur; tek seferlik lisans ve 1.x güncellemeleri ücretsizdir.</li><li data-t="mdl.a3">Yerel modelle internet bağlantısı olmadan çalışır.</li><li data-t="mdl.a4">Dosya okuyup düzenleyebilir, komut ve kod çalıştırabilir; her işlemde onayınız istenir.</li><li data-t="mdl.a5">Modeli siz seçersiniz: yerel model ya da kendi Gemini, OpenAI veya Anthropic anahtarınız.</li><li data-t="mdl.a6">Sınırı da belirtelim: yerel modeller en büyük bulut modellerinden küçüktür. Zor işlerde bulut anahtarınızı kullanabilirsiniz.</li></ul>
+  </div>
+</section>
+
 <section id="karsilastir">
   <div class="wrap">
     <div class="cost">
@@ -212,6 +232,11 @@
 </section>
 
 <footer class="foot">
+  <div class="wrap foot-info">
+    <div><h3 data-t="ft.c.h">İletişim</h3><p data-t="ft.c.p">E-posta: voyageroneai@gmail.com. Lisans, fatura ve teknik destek için bu adrese yazabilirsiniz.</p></div>
+    <div><h3 data-t="ft.l.h">Lisans</h3><p data-t="ft.l.p">Tek seferlik ödeme, süresiz kullanım. Pro: 1 kullanıcı, Team: 5, Company: 60 kullanıcı. 1.x güncellemeleri ücretsizdir.</p></div>
+    <div><h3 data-t="ft.r.h">Deneme ve iade</h3><p data-t="ft.r.p">7 gün ücretsiz tam sürüm deneme. Anahtar teslim edilmeden iptalde tam iade; teslimden sonra dijital üründe cayma hakkı kullanılamaz.</p></div>
+  </div>
   <div class="wrap">
     <span>© <span id="year">2026</span> WAESNA</span>
     <span><a href="privacy.html" data-t="ft.privacy">Gizlilik ve KVKK</a> · <a href="terms.html" data-t="ft.terms">Kullanım Koşulları</a> · <a href="satis.html" data-t="ft.sales">Satış Koşulları</a> · <a id="mailFoot" href="#"></a></span>
@@ -353,7 +378,7 @@ addEventListener("scroll", () => {
 }, { passive: true });
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .35 });
 document.querySelectorAll(".io").forEach(el => io.observe(el));
-document.addEventListener("langchange", () => { const c = document.getElementById("chart"); c.setAttribute("aria-label", T(c.dataset.aria)); });
+document.addEventListener("langchange", () => { const c = document.getElementById("chart"); c.setAttribute("aria-label", T(c.dataset.aria)); document.querySelectorAll("[data-alt]").forEach(e => { e.alt = T(e.dataset.alt); }); });
 
 /* demo: sohbet oynar; ağ anahtarı çevrilince aynı iş ağ olmadan sürer */
 const win = document.getElementById("win"), netSw = document.getElementById("netSw"), netState = document.getElementById("netState");

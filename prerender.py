@@ -50,6 +50,8 @@ def main():
     tr = dict_from(i18n, r"tr:\s*\{")
     v = HERE / "voyagerone.html"
     t = fill(v.read_text(encoding="utf-8"), tr)
+    t = re.sub(r'alt="" data-alt="([^"]+)"', lambda m: 'alt="%s" data-alt="%s"' % (html.escape(tr.get(m.group(1), ""), quote=True), m.group(1)), t)
+    t = re.sub(r'alt="[^"]*" data-alt="([^"]+)"', lambda m: 'alt="%s" data-alt="%s"' % (html.escape(tr.get(m.group(1), ""), quote=True), m.group(1)), t)
     for os_, url in dl.items():
         t = re.sub(r'(<a class="dl" data-dl="%s")(?: href="[^"]*")?' % os_, r'\1 href="%s"' % url, t)
     v.write_text(t, encoding="utf-8")
