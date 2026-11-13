@@ -234,5 +234,8 @@ const C=typeof CONFIG!=='undefined'?CONFIG:{}; if(C.email){for(const id of ["mai
 document.getElementById("year").textContent=new Date().getFullYear();
 addEventListener("scroll",()=>document.getElementById("nav").classList.toggle("on",scrollY>8),{passive:true});
 </script>
+<script>
+if(typeof CONFIG!=="undefined"&&CONFIG.seller&&CONFIG.seller.taxId){document.querySelectorAll("footer span:last-child").forEach(s=>{const a=document.createElement("a");a.href="satis.html";a.textContent=(document.documentElement.lang==="tr"?"Satış Koşulları":"Sales Terms");s.append(" · ",a);});}
+</script>
 </body>
 </html>

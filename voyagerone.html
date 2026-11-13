@@ -230,6 +230,7 @@
     <label><span data-t="rq.note"></span><textarea name="note" rows="3" maxlength="1000"></textarea></label>
     <div class="hp" aria-hidden="true"><input name="website" tabindex="-1" autocomplete="off"></div>
     <label class="ck"><input type="checkbox" name="consent" required><span id="rqConsent"></span></label>
+    <label class="ck"><input type="checkbox" name="consent2" required><span id="rqTerms"></span></label>
     <p class="note" id="rqNote" role="status" aria-live="polite"></p>
     <div class="acts"><button type="button" class="btn line" id="rqClose" data-t="rq.cancel"></button><button type="submit" class="btn solid" id="rqSend" data-t="rq.send"></button></div>
   </form>
@@ -264,6 +265,10 @@ function wireBuy() {
   c.textContent = T("rq.consent") + " ";
   const a = document.createElement("a"); a.href = "privacy.html" + (document.documentElement.lang === "tr" ? "" : "#en");
   a.target = "_blank"; a.rel = "noopener"; a.textContent = T("rq.privacy"); c.appendChild(a);
+  const tm = document.getElementById("rqTerms");
+  tm.textContent = T("rq.terms") + " ";
+  const b = document.createElement("a"); b.href = "satis.html" + (document.documentElement.lang === "tr" ? "#tr" : "#en");
+  b.target = "_blank"; b.rel = "noopener"; b.textContent = T("rq.terms.link"); tm.appendChild(b);
 }
 
 /* talep formu */
@@ -284,11 +289,12 @@ rqForm.addEventListener("submit", async e => {
   if (!f.name.value.trim()) { f.name.focus(); return say(T("rq.need.name"), "err"); }
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.email.value.trim())) { f.email.focus(); return say(T("rq.bad.email"), "err"); }
   if (!f.consent.checked) { f.consent.focus(); return say(T("rq.need.consent"), "err"); }
+  if (!f.consent2.checked) { f.consent2.focus(); return say(T("rq.need.terms"), "err"); }
   send.disabled = true; say(T("rq.sending"));
   try {
     const r = await fetch(REQ, { method: "POST", body: JSON.stringify({
       action: "request", name: f.name.value, email: f.email.value, plan: f.plan.value,
-      seats: f.seats.value, note: f.note.value, website: f.website.value, lang: document.documentElement.lang }) });
+      seats: f.seats.value, note: f.note.value, terms: true, website: f.website.value, lang: document.documentElement.lang }) });
     const j = await r.json();
     if (j.ok) { say(T("rq.ok").replace("{id}", j.id || ""), "ok"); f.reset(); send.textContent = T("rq.done"); send.onclick = () => rq.close(); return; }
     say(T(j.error === "email" ? "rq.bad.email" : j.error === "wait" ? "rq.wait" : "rq.err").replace("{email}", CONFIG.email), "err");
@@ -357,6 +363,9 @@ function setNet(on) {
 }
 netSw.addEventListener("click", () => { touched = true; clearTimeout(autoOff); setNet(win.dataset.net === "off"); play(); });
 document.fonts.ready.then(() => { play(); autoOff = setTimeout(() => { if (!touched) setNet(false); }, 5600); });
+</script>
+<script>
+if(typeof CONFIG!=="undefined"&&CONFIG.seller&&CONFIG.seller.taxId){document.querySelectorAll("footer span:last-child").forEach(s=>{const a=document.createElement("a");a.href="satis.html";a.textContent=(document.documentElement.lang==="tr"?"Satış Koşulları":"Sales Terms");s.append(" · ",a);});}
 </script>
 </body>
 </html>

@@ -40,5 +40,17 @@ const CONFIG = {
     mac:     "https://github.com/waesna/waesna.github.io/releases/download/v1.0.3/VoyagerOne-1.0.3-macOS.dmg",
     windows: "https://github.com/waesna/waesna.github.io/releases/download/v1.0.3/VoyagerOne-1.0.3-Windows.zip",
     linux:   "https://github.com/waesna/waesna.github.io/releases/download/v1.0.3/VoyagerOne-1.0.3-Linux.tar.gz"
+  },
+
+  /* SATICI BİLGİLERİ ─────────────────────────────────────────────────
+     Vergi mükellefiyetin açıldığında doldur (satis.html bunları gösterir).
+     taxId doluysa sitedeki alt menülerde "Satış Koşulları" bağlantısı çıkar.   */
+  seller: {
+    name:      "Eray Mert Özüduru",
+    title:     "",   // ticari unvan (varsa)
+    taxOffice: "",   // vergi dairesi
+    taxId:     "",   // vergi kimlik numarası
+    address:   "",   // açık adres
+    phone:     ""
   }
 };
