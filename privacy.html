@@ -6,8 +6,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600&family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
 <style>:root{
-  --paper:#F7F4EE; --raise:#FFFDF9; --ink:#17140F; --ink-2:#514B41; --ink-3:#8B8376;
-  --rule:#E4DCCE; --accent:#B97F3A; --accent-2:#D9A45E;
+  --paper:#FFFFFF; --raise:#FAFAFA; --ink:#111111; --ink-2:#555555; --ink-3:#8A8A8A;
+  --rule:#E5E5E5; --accent:#111111; --accent-2:#333333;
   --display:"Bricolage Grotesque",Georgia,serif;
   --body:"Geist","Helvetica Neue",Arial,sans-serif;
   --mono:"Geist Mono",ui-monospace,Menlo,monospace;
@@ -18,7 +18,7 @@
   --t-card:19px; --t-body:16px; --t-small:14px; --t-mono:12px;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){
-  --paper:#111010; --raise:#191715; --ink:#F4F0E8; --ink-2:#B5AC9E; --ink-3:#847B6E; --rule:#2B2723;
+  --paper:#0D0D0D; --raise:#171717; --ink:#F5F5F5; --ink-2:#B3B3B3; --ink-3:#808080; --rule:#2A2A2A;
 }}
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:var(--paper);color:var(--ink);font:var(--t-body)/1.7 var(--body);-webkit-font-smoothing:antialiased}
@@ -39,6 +39,7 @@ ul{padding-left:20px}
 .langbar{display:flex;gap:10px;font-size:var(--t-small);margin-bottom:8px}
 footer{border-top:1px solid var(--rule);padding:28px var(--pad) 50px;font-size:13px;color:var(--ink-3);
   display:flex;gap:16px;justify-content:space-between;flex-wrap:wrap}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--accent:#F5F5F5;--accent-2:#CFCFCF}.dl .yours{color:#111}img.inv{filter:invert(1)}}
 </style></head><body>
 <nav class="nav"><a class="logo" href="./"><img src="assets/waesna-mark.png" alt="WAESNA">WAESNA</a>
 <a href="./" style="font-size:14px;color:var(--ink-2);text-decoration:none">← Ana sayfa</a></nav>

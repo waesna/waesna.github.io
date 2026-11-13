@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>WAESNA — Bilgisayarında çalışan yazılımlar</title>
 <meta name="description" content="WAESNA; verini kendi cihazında tutan, tek seferlik ödemeyle sahip olduğun masaüstü yazılımlar geliştirir. VoyagerOne ve Intro.">
-<meta name="theme-color" content="#F7F4EE">
+<meta name="theme-color" content="#FFFFFF">
 <link rel="canonical" href="https://waesna.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="WAESNA — Software that runs on your computer">
@@ -30,14 +30,14 @@
 @font-face{font-family:"Waesna";src:url("assets/fonts/Waesna-Italic.woff2") format("woff2");font-weight:400;font-style:italic;font-display:swap}
 @font-face{font-family:"Waesna";src:url("assets/fonts/Waesna-BoldItalic.woff2") format("woff2");font-weight:700;font-style:italic;font-display:swap}
 :root{
-  --paper:#F7F4EE; --raise:#FFFDF9; --ink:#17140F; --ink-2:#514B41; --ink-3:#8B8376;
-  --rule:#E4DCCE; --accent:#B97F3A; --accent-2:#D9A45E;
+  --paper:#FFFFFF; --raise:#FAFAFA; --ink:#111111; --ink-2:#555555; --ink-3:#8A8A8A;
+  --rule:#E5E5E5; --accent:#111111; --accent-2:#333333;
   --display:"Waesna","Bricolage Grotesque",Georgia,serif; --body:"Geist","Helvetica Neue",Arial,sans-serif; --mono:"Geist Mono",ui-monospace,Menlo,monospace;
   --pad:clamp(20px,5vw,84px); --ease:cubic-bezier(.2,.7,.3,1);
   --t-hero:clamp(40px,5.8vw,80px); --t-sec:clamp(28px,3.2vw,40px); --t-card:19px; --t-body:16px; --t-small:14px; --t-mono:12px;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){
-  --paper:#111010; --raise:#191715; --ink:#F4F0E8; --ink-2:#B5AC9E; --ink-3:#847B6E; --rule:#2B2723;
+  --paper:#0D0D0D; --raise:#171717; --ink:#F5F5F5; --ink-2:#B3B3B3; --ink-3:#808080; --rule:#2A2A2A;
 }}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -113,12 +113,13 @@ footer{padding:40px var(--pad);border-top:1px solid var(--rule);display:flex;jus
 footer a:hover{color:var(--ink)}
 .rv{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
 .rv.in{opacity:1;transform:none}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--accent:#F5F5F5;--accent-2:#CFCFCF}.dl .yours{color:#111}img.inv{filter:invert(1)}}
 </style>
 </head>
 <body>
 
 <nav class="nav" id="nav">
-  <a class="logo" href="#top"><img src="assets/waesna-mark.png" alt="WAESNA" width="704" height="466">WAESNA</a>
+  <a class="logo" href="#top"><img src="assets/waesna-mark.png" alt="WAESNA" width="704" height="389">WAESNA</a>
   <div class="nav-links">
     <a href="#urunler" data-t="h.nav.products">Ürünler</a>
     <a href="#hakkinda" data-t="h.nav.about">Hakkımızda</a>
@@ -137,7 +138,7 @@ footer a:hover{color:var(--ink)}
     <div class="trust"><span data-t="h.trust.1"></span><span data-t="h.trust.2"></span><span data-t="h.trust.3"></span></div>
   </div>
   <div class="showcase" aria-hidden="true">
-    <a class="sc" href="voyagerone.html"><img src="assets/voyagerone-mark.png" alt=""><b>VoyagerOne</b></a>
+    <a class="sc" href="voyagerone.html"><img class="inv" src="assets/voyagerone-mark.png" alt=""><b>VoyagerOne</b></a>
     <a class="sc in" href="intro.html"><img src="assets/intro-logo.svg" alt=""><b>Intro</b></a>
   </div>
 </header>
@@ -149,7 +150,7 @@ footer a:hover{color:var(--ink)}
   <p class="lead rv" style="margin-bottom:34px" data-t="h.prod.lead"></p>
   <div class="prods rv">
     <a class="prod-card" href="voyagerone.html">
-      <div class="pc-logo"><img src="assets/voyagerone-mark.png" alt="VoyagerOne"></div>
+      <div class="pc-logo"><img class="inv" src="assets/voyagerone-mark.png" alt="VoyagerOne"></div>
       <p class="mono" data-t="h.v1.tag"></p><h3>VoyagerOne</h3>
       <p class="pc-desc" data-t="h.v1.desc"></p>
       <div class="pc-foot"><span class="pc-price">$149<small data-t="h.once"></small></span><span class="pc-cta" data-t="h.explore"></span></div>
