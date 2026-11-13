@@ -51,7 +51,7 @@ section{padding:clamp(84px,12vw,184px) 0}
 .ghost path:nth-child(3){animation-delay:.5s}
 @keyframes draw{0%{stroke-dashoffset:1;opacity:0}2%{opacity:1}100%{stroke-dashoffset:0;opacity:1}}
 .hero .wrap{position:relative;z-index:1}
-.hero h1{font-size:var(--h1);max-width:12ch}
+.hero h1{font-size:var(--h1)}
 .hero-row{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,5vw,80px);margin-top:clamp(36px,5vw,72px);align-items:start}
 .lead{font-size:clamp(18px,1.5vw,22px);line-height:1.5;max-width:46ch;color:var(--ink)}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
@@ -105,6 +105,11 @@ section{padding:clamp(84px,12vw,184px) 0}
 .strike.in p:nth-child(2){transition-delay:.25s}.strike.in p:nth-child(3){transition-delay:.5s}.strike.in p:nth-child(4){transition-delay:.75s}
 .strike .fix{text-decoration:none;color:var(--ink);margin-top:clamp(24px,4vw,56px);font-size:clamp(28px,4.4vw,72px)}
 .strike.in .fix{color:var(--ink);text-decoration-color:transparent}
+
+/* ── genel bakış ── */
+.ov{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;border-top:2px solid var(--ink);padding-top:clamp(24px,3vw,40px)}
+.ov p{grid-column:span 6;font-size:clamp(19px,1.7vw,24px);line-height:1.5}
+@media (max-width:860px){.ov p{grid-column:1/-1}}
 
 /* ── özellik satırları ── */
 .rows{border-top:2px solid var(--ink)}

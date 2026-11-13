@@ -3,29 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WAESNA — Bilgisayarında çalışan yazılımlar</title>
-<meta name="description" content="WAESNA; verini kendi cihazında tutan, tek seferlik ödemeyle sahip olduğun masaüstü yazılımlar geliştirir. VoyagerOne ve Intro.">
+<title>WAESNA – Masaüstü yazılım</title>
+<meta name="description" content="WAESNA, internet bağlantısı ve abonelik gerektirmeyen masaüstü yazılımlar geliştiren bağımsız bir yazılım stüdyosudur. Ürünümüz: VoyagerOne.">
 <meta name="theme-color" content="#FFFFFF">
 <link rel="canonical" href="https://waesna.github.io/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="WAESNA — Software that runs on your computer">
-<meta property="og:description" content="Own your tools. Offline-first, one-time payment. VoyagerOne and Intro.">
+<meta property="og:title" content="WAESNA – Desktop software">
+<meta property="og:description" content="Desktop software that works offline, with one-time licensing. Product: VoyagerOne.">
 <meta property="og:url" content="https://waesna.github.io/">
 <meta property="og:image" content="https://waesna.github.io/assets/og.png">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"WAESNA","url":"https://waesna.github.io/",
- "description":"Offline-first desktop software with one-time pricing.",
- "makesOffer":[{"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"VoyagerOne"},"price":"149","priceCurrency":"USD"},
- {"@type":"Offer","itemOffered":{"@type":"SoftwareApplication","name":"Intro"},"price":"9.99","priceCurrency":"USD"}]}
+ "description":"Independent software studio building desktop applications with one-time licensing."}
 </script>
 <link rel="preload" href="assets/fonts/bricolage-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/fonts.css">
 <link rel="stylesheet" href="assets/site.css">
 <style>
-.manifesto{background:var(--ink);color:var(--paper);padding:clamp(72px,11vw,170px) 0}
-.manifesto p{font:800 clamp(40px,8.4vw,142px)/.94 var(--display);font-stretch:75%;letter-spacing:-.022em;max-width:15ch}
 .prods{border-bottom:2px solid var(--ink)}
 .prod{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px;align-items:center;margin:0 calc(var(--pad) * -1);padding:clamp(28px,4vw,60px) var(--pad);border-top:2px solid var(--ink);transition:background .25s,color .25s}
 .prod:hover{background:var(--ink);color:var(--paper)}
@@ -41,45 +37,44 @@
 .meta .pr{font:800 34px/1 var(--display);font-stretch:75%}.meta .pr small{font:400 14px var(--body);margin-left:8px;opacity:.7}
 .meta .go{font-weight:600;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:2px}
 @media (max-width:860px){.prod h3,.meta{grid-column:1/-1}}
-.endcta .cta{margin-top:0}
+.ul{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px;font-weight:600}
 </style>
 </head>
 <body>
 <a class="skip" href="#urunler" data-t="skip">İçeriğe geç</a>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <symbol id="vm" viewBox="0 0 100 100"><path d="M10 26.8L56.7 80.5" fill="none" stroke="currentColor" stroke-width="20" stroke-linecap="round"/><path d="M84.8 27.8L90.7 18.5" fill="none" stroke="currentColor" stroke-width="18.4" stroke-linecap="round"/></symbol>
-  <symbol id="im" viewBox="0 0 120 100"><path d="M104 16 L56 56 A22 22 0 1 1 56 44 L104 84 Z" fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="round" stroke-linecap="round"/></symbol>
 </defs></svg>
 
 <nav class="nav" id="nav"><div class="wrap">
   <a class="logo" href="#top"><img src="assets/waesna-mark.png" alt="" width="704" height="389">WAESNA</a>
   <div class="nav-links">
-    <a href="#urunler" data-t="h.nav.products">Ürünler</a>
-    <a href="#hakkinda" data-t="h.nav.about">Hakkımızda</a>
+    <a href="#urunler" data-t="h.nav.products"></a>
+    <a href="#hakkinda" data-t="h.nav.about"></a>
+    <a href="#destek" data-t="h.nav.support"></a>
+    <a href="#iletisim" data-t="h.nav.contact"></a>
   </div>
   <div class="lang" role="group" aria-label="Language"><button data-lang="tr">TR</button><button data-lang="en">EN</button></div>
-  <a class="btn solid" href="#urunler" data-t="h.cta.products">Ürünleri gör</a>
+  <a class="btn solid" href="#urunler" data-t="h.cta.products"></a>
 </div></nav>
 
 <header class="hero" id="top">
   <svg class="ghost" viewBox="0 0 100 55.2" aria-hidden="true"><path pathLength="1" stroke-width="14" d="M7.6 7.4L43.2 48.1"/><path pathLength="1" stroke-width="14" d="M41.3 7.2L76.4 48.1"/><path pathLength="1" stroke-width="13.8" d="M88.5 14L93.1 7.2"/></svg>
   <div class="wrap">
-    <h1 class="d" data-th="h.hero.title">Yazılım senin<br>bilgisayarında.<br>Abonelik yok.</h1>
+    <h1 class="d" data-th="h.hero.title">Masaüstü<br>yazılımlar<br>geliştiriyoruz.</h1>
     <div class="hero-row">
       <div>
         <p class="lead" data-t="h.hero.lead"></p>
-        <div class="cta"><a class="btn solid" href="#urunler" data-t="h.cta.products">Ürünleri gör</a><a class="btn line" href="#hakkinda" data-t="h.cta.about">Hakkımızda</a></div>
+        <div class="cta"><a class="btn solid" href="#urunler" data-t="h.cta.products"></a><a class="btn line" href="#iletisim" data-t="h.cta.contact"></a></div>
       </div>
       <ul class="facts"><li data-t="h.trust.1"></li><li data-t="h.trust.2"></li><li data-t="h.trust.3"></li></ul>
     </div>
   </div>
 </header>
 
-<section class="manifesto"><div class="wrap"><p data-t="h.manifesto"></p></div></section>
-
 <section id="urunler">
   <div class="wrap">
-    <div class="sec-head"><h2 data-t="h.prod.h"></h2><p data-t="h.prod.lead"></p></div>
+    <div class="sec-head"><h2 data-t="h.prod.h"></h2></div>
     <div class="prods">
       <a class="prod" href="voyagerone.html">
         <h3><span class="tile"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#vm"/></svg></span>VoyagerOne</h3>
@@ -89,22 +84,15 @@
           <div class="foot-row"><span class="pr">$149<small data-t="h.once"></small></span><span class="go" data-t="h.explore"></span></div>
         </div>
       </a>
-      <a class="prod" href="intro.html">
-        <h3><span class="tile"><svg viewBox="0 0 120 100" aria-hidden="true"><use href="#im"/></svg></span>Intro</h3>
-        <div class="meta">
-          <p class="tag" data-t="h.v2.tag"></p>
-          <p class="desc" data-t="h.v2.desc"></p>
-          <div class="foot-row"><span class="pr" id="introPrice">$9.99<small data-t="h.once"></small></span><span class="go" data-t="h.explore"></span></div>
-        </div>
-      </a>
     </div>
   </div>
 </section>
 
-<section id="hakkinda" style="padding-top:0">
+<section id="hakkinda" class="about">
   <div class="wrap">
-    <div class="sec-head"><h2 data-t="h.about.h"></h2><p data-t="h.about.lead"></p></div>
-    <div class="rows">
+    <div class="sec-head"><h2 data-t="h.about.h"></h2></div>
+    <div class="ov"><p data-t="h.about.p1"></p><p data-t="h.about.p2"></p></div>
+    <div class="rows" style="margin-top:clamp(48px,6vw,96px)">
       <div class="row"><h3 data-t="h.a1.h"></h3><p data-t="h.a1.p"></p></div>
       <div class="row"><h3 data-t="h.a2.h"></h3><p data-t="h.a2.p"></p></div>
       <div class="row"><h3 data-t="h.a3.h"></h3><p data-t="h.a3.p"></p></div>
@@ -113,17 +101,29 @@
   </div>
 </section>
 
-<section id="baslayalim" class="endcta" style="padding-top:0">
+<section id="destek" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head"><h2 data-t="h.cta2.h"></h2><p data-t="h.cta2.p"></p></div>
-    <div class="cta"><a class="btn solid" href="voyagerone.html" data-t="h.cta2.v1"></a><a class="btn line" href="intro.html" data-t="h.cta2.v2"></a></div>
+    <div class="sec-head"><h2 data-t="h.sup.h"></h2><p data-t="h.sup.lead"></p></div>
+    <div class="rows">
+      <div class="row"><h3 data-t="h.s1.h"></h3><p><a class="ul" href="voyagerone.html#sss" data-t="h.s1.p"></a></p></div>
+      <div class="row"><h3 data-t="h.s2.h"></h3><p><a class="ul" href="voyagerone.html#indir" data-t="h.s2.p"></a></p></div>
+      <div class="row"><h3 data-t="h.s3.h"></h3><p><a class="ul" href="privacy.html" data-t="h.s3.p"></a></p></div>
+      <div class="row"><h3 data-t="h.s4.h"></h3><p><a class="ul" href="terms.html" data-t="h.s4.p"></a></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="iletisim" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2 data-t="h.ct.h"></h2><p data-t="h.ct.p"></p></div>
+    <a class="mail" id="mailBig" href="#"></a>
   </div>
 </section>
 
 <footer class="foot">
   <div class="wrap">
     <span>© <span id="year">2026</span> WAESNA</span>
-    <span><a href="privacy.html" data-t="h.ft.privacy">Gizlilik</a> · <a href="terms.html" data-t="h.ft.terms">Koşullar</a> · <a id="mail" href="#">voyageroneai@gmail.com</a></span>
+    <span><a href="privacy.html" data-t="h.ft.privacy"></a> · <a href="terms.html" data-t="h.ft.terms"></a> · <a id="mail" href="#"></a></span>
   </div>
   <svg class="foot-mark" viewBox="0 0 100 55.2" aria-hidden="true"><path stroke-width="14" d="M7.6 7.4L43.2 48.1M41.3 7.2L76.4 48.1"/><path stroke-width="13.8" d="M88.5 14L93.1 7.2"/></svg>
 </footer>
@@ -132,46 +132,92 @@
 <script>
 const H = {
   tr: {
-    "h.nav.products":"Ürünler","h.nav.about":"Hakkımızda","h.cta.products":"Ürünleri gör","h.cta.about":"Hakkımızda",
-    "h.hero.kicker":"WAESNA · Yazılım stüdyosu",
-    "h.hero.title":"Yazılım senin<br>bilgisayarında.<br>Abonelik yok.",
-    "h.hero.lead":"WAESNA; verini kendi cihazında tutan, tek seferlik ödemeyle sahip olduğun masaüstü yazılımlar geliştirir. Bulut zorunluluğu yok, kota yok — araçların gerçekten senin.",
-    "h.trust.1":"Tek seferlik ödeme","h.trust.2":"Çevrimdışı çalışır","h.trust.3":"Verin sende kalır",
-    "h.prod.k":"Ürünler","h.prod.h":"Ürünlerimiz","h.prod.lead":"Her biri kendi başına, aboneliksiz ve tamamen cihazında çalışır.",
-    "h.v1.tag":"Yapay zekâ çalışma alanı","h.v1.desc":"Yerel modelle internetsiz çalışan, Word/Excel/PDF üreten masaüstü yapay zekâ.",
-    "h.v2.tag":"Yapay zekâ video editörü","h.v2.desc":"Ritme göre kesen, efekt basan, altyazı ekleyen tamamen çevrimdışı video editörü.",
-    "h.once":" tek seferlik","h.explore":"İncele","h.new":"Yeni",
-    "h.about.k":"Hakkımızda","h.about.h":"Neye inanıyoruz",
-    "h.about.lead":"Yazılımın kiralanan değil, sahip olunan bir şey olması gerektiğine inanıyoruz.",
-    "h.a1.h":"Verin sende","h.a1.p":"Dosyaların ve içeriğin kendi bilgisayarında kalır; başkasının sunucusunda değil.",
-    "h.a2.h":"Tek seferlik","h.a2.p":"Bir kere öde, hep senin. Aylık abonelik yok.",
-    "h.a3.h":"Çevrimdışı","h.a3.p":"İnternet olmadan da çalışır; işini internet kesintisi durdurmaz.",
-    "h.a4.h":"Sade ve hızlı","h.a4.p":"Gereksiz karmaşa yok; işini yapan, hızlı ve anlaşılır araçlar.",
-    "h.manifesto":"Bulut çağında araçların, verinle birlikte sana ait olmalı.","skip":"İçeriğe geç",
-    "h.cta2.k":"Başla","h.cta2.h":"Hangisiyle başlayalım?","h.cta2.p":"İki ürün, tek felsefe: sahip olduğun, çevrimdışı çalışan yazılım.",
-    "h.cta2.v1":"VoyagerOne\u2019ı incele","h.cta2.v2":"Intro\u2019yu incele",
-    "h.ft.privacy":"Gizlilik","h.ft.terms":"Koşullar",
+    "h.nav.products":"Ürünler",
+    "h.nav.about":"Hakkımızda",
+    "h.nav.support":"Destek",
+    "h.nav.contact":"İletişim",
+    "h.cta.products":"Ürünlerimiz",
+    "h.cta.contact":"İletişim",
+    "h.hero.title":"Masaüstü<br>yazılımlar<br>geliştiriyoruz.",
+    "h.hero.lead":"WAESNA, internet bağlantısı ve abonelik gerektirmeyen masaüstü uygulamalar geliştiren bağımsız bir yazılım stüdyosudur. Ürünlerimiz Windows, macOS ve Linux üzerinde çalışır ve verilerinizi kendi bilgisayarınızda tutar.",
+    "h.trust.1":"Tek seferlik lisans",
+    "h.trust.2":"Çevrimdışı çalışır",
+    "h.trust.3":"Windows, macOS, Linux",
+    "h.prod.h":"Ürünlerimiz",
+    "h.v1.tag":"Masaüstü yapay zekâ uygulaması",
+    "h.v1.desc":"Yerel veya bulut modellerle çalışır; Word, Excel, PowerPoint ve PDF dosyası hazırlar, dosya ve kod işlemleri yapar.",
+    "h.once":" tek seferlik",
+    "h.explore":"İncele",
+    "h.about.h":"Hakkımızda",
+    "h.about.p1":"WAESNA, masaüstü yazılım geliştiren bağımsız bir yazılım stüdyosudur. İlk ürünümüz VoyagerOne'ı 2026 yılında yayımladık.",
+    "h.about.p2":"Ürünlerimizi abonelik yerine tek seferlik lisansla sunuyoruz. Uygulamalar internet bağlantısı olmadan çalışabilir; dosyalarınız ve sohbetleriniz sunucularımıza gönderilmez.",
+    "h.a1.h":"Veriler cihazınızda",
+    "h.a1.p":"Dosyalar, sohbetler ve projeler yalnızca sizin bilgisayarınızda saklanır.",
+    "h.a2.h":"Tek seferlik lisans",
+    "h.a2.p":"Aylık veya yıllık abonelik yoktur. 1.x sürüm güncellemeleri lisansa dahildir.",
+    "h.a3.h":"Çevrimdışı kullanım",
+    "h.a3.p":"Yerel modelle internet bağlantısı olmadan çalışır. Bağlantı yalnızca ilk etkinleştirmede, güncelleme kontrolünde ve bulut modeli kullanıldığında gerekir.",
+    "h.a4.h":"Üç platform",
+    "h.a4.p":"Windows, macOS ve Linux için sürümler bulunur.",
+    "h.sup.h":"Destek",
+    "h.sup.lead":"Kurulum, lisans ve kullanım ile ilgili bilgilere aşağıdan ulaşabilirsiniz.",
+    "h.s1.h":"Sık sorulan sorular",
+    "h.s1.p":"VoyagerOne SSS sayfası",
+    "h.s2.h":"Kurulum dosyaları",
+    "h.s2.p":"Son sürümü indirin",
+    "h.s3.h":"Gizlilik ve KVKK",
+    "h.s3.p":"Gizlilik politikası ve aydınlatma metni",
+    "h.s4.h":"Kullanım koşulları",
+    "h.s4.p":"Kullanım koşullarını okuyun",
+    "h.ct.h":"İletişim",
+    "h.ct.p":"Lisans, fatura ve teknik destek için e-posta gönderebilirsiniz.",
+    "h.ft.privacy":"Gizlilik",
+    "h.ft.terms":"Koşullar",
+    "skip":"İçeriğe geç",
   },
   en: {
-    "h.nav.products":"Products","h.nav.about":"About","h.cta.products":"See products","h.cta.about":"About",
-    "h.hero.kicker":"WAESNA · Software studio",
-    "h.hero.title":"Software on<br>your computer.<br>No subscription.",
-    "h.hero.lead":"WAESNA builds desktop software that keeps your data on your own device and that you own with a one-time payment. No forced cloud, no quotas — your tools are truly yours.",
-    "h.trust.1":"One-time payment","h.trust.2":"Works offline","h.trust.3":"Your data stays with you",
-    "h.prod.k":"Products","h.prod.h":"Our products","h.prod.lead":"Each one stands alone, no subscription, running entirely on your device.",
-    "h.v1.tag":"AI workspace","h.v1.desc":"A desktop AI that works offline with a local model and creates Word/Excel/PDF files.",
-    "h.v2.tag":"AI video editor","h.v2.desc":"An offline video editor that cuts to the beat, adds effects and captions.",
-    "h.once":" one-time","h.explore":"Explore","h.new":"New",
-    "h.about.k":"About","h.about.h":"What we believe",
-    "h.about.lead":"We believe software should be something you own, not something you rent.",
-    "h.a1.h":"Your data","h.a1.p":"Your files and content stay on your own computer, not on someone else's server.",
-    "h.a2.h":"One-time","h.a2.p":"Pay once, yours forever. No monthly subscription.",
-    "h.a3.h":"Offline","h.a3.p":"Works without the internet; an outage never stops your work.",
-    "h.a4.h":"Simple & fast","h.a4.p":"No needless clutter — fast, clear tools that get the job done.",
-    "h.manifesto":"In the age of the cloud, your tools should belong to you, together with your data.","skip":"Skip to content",
-    "h.cta2.k":"Start","h.cta2.h":"Which one first?","h.cta2.p":"Two products, one philosophy: software you own that works offline.",
-    "h.cta2.v1":"Explore VoyagerOne","h.cta2.v2":"Explore Intro",
-    "h.ft.privacy":"Privacy","h.ft.terms":"Terms",
+    "h.nav.products":"Products",
+    "h.nav.about":"About",
+    "h.nav.support":"Support",
+    "h.nav.contact":"Contact",
+    "h.cta.products":"Our products",
+    "h.cta.contact":"Contact",
+    "h.hero.title":"We build<br>desktop<br>software.",
+    "h.hero.lead":"WAESNA is an independent software studio building desktop applications that need no subscription or internet connection. Our products run on Windows, macOS and Linux and keep your data on your own computer.",
+    "h.trust.1":"One-time license",
+    "h.trust.2":"Works offline",
+    "h.trust.3":"Windows, macOS, Linux",
+    "h.prod.h":"Our products",
+    "h.v1.tag":"Desktop AI application",
+    "h.v1.desc":"Works with local or cloud models; creates Word, Excel, PowerPoint and PDF files and handles file and code tasks.",
+    "h.once":" one-time",
+    "h.explore":"Details",
+    "h.about.h":"About us",
+    "h.about.p1":"WAESNA is an independent software studio building desktop software. We released our first product, VoyagerOne, in 2026.",
+    "h.about.p2":"We sell our products with a one-time license instead of a subscription. The applications can run without an internet connection, and your files and chats are not sent to our servers.",
+    "h.a1.h":"Data on your device",
+    "h.a1.p":"Files, chats and projects are stored only on your own computer.",
+    "h.a2.h":"One-time license",
+    "h.a2.p":"There is no monthly or yearly subscription. Updates within 1.x are included.",
+    "h.a3.h":"Offline use",
+    "h.a3.p":"Works without an internet connection with a local model. A connection is needed only for first activation, update checks and when using a cloud model.",
+    "h.a4.h":"Three platforms",
+    "h.a4.p":"Versions are available for Windows, macOS and Linux.",
+    "h.sup.h":"Support",
+    "h.sup.lead":"You can find information on installation, licensing and use below.",
+    "h.s1.h":"Frequently asked questions",
+    "h.s1.p":"VoyagerOne FAQ",
+    "h.s2.h":"Installation files",
+    "h.s2.p":"Download the latest version",
+    "h.s3.h":"Privacy",
+    "h.s3.p":"Privacy policy and notice",
+    "h.s4.h":"Terms of use",
+    "h.s4.p":"Read the terms of use",
+    "h.ct.h":"Contact",
+    "h.ct.p":"Write to us about licenses, invoices or technical support.",
+    "h.ft.privacy":"Privacy",
+    "h.ft.terms":"Terms",
+    "skip":"Skip to content",
   }
 };
 function homeLang(){ try{const s=localStorage.getItem("waesna_lang"); if(s==="tr"||s==="en")return s;}catch(e){} return (navigator.language||"en").toLowerCase().startsWith("tr")?"tr":"en"; }
@@ -181,11 +227,10 @@ function applyLang(lang){
   document.querySelectorAll("[data-th]").forEach(el=>{const v=d[el.dataset.th]; if(v!=null)el.innerHTML=v;});
   document.querySelectorAll("[data-lang]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===lang)));
   try{localStorage.setItem("waesna_lang",lang);}catch(e){}
-  const ic=(typeof CONFIG!=='undefined'?CONFIG:{}).intro; if(ic&&ic.price){const p=document.getElementById("introPrice"); if(p)p.firstChild.textContent=ic.price;}
 }
 document.querySelectorAll("[data-lang]").forEach(b=>b.addEventListener("click",()=>applyLang(b.dataset.lang)));
 applyLang(homeLang());
-const C=typeof CONFIG!=='undefined'?CONFIG:{}; if(C.email){const m=document.getElementById("mail"); m.href="mailto:"+C.email; m.textContent=C.email;}
+const C=typeof CONFIG!=='undefined'?CONFIG:{}; if(C.email){for(const id of ["mail","mailBig"]){const m=document.getElementById(id); m.href="mailto:"+C.email; m.textContent=C.email;}}
 document.getElementById("year").textContent=new Date().getFullYear();
 addEventListener("scroll",()=>document.getElementById("nav").classList.toggle("on",scrollY>8),{passive:true});
 </script>
