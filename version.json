@@ -1,1 +1,1 @@
-{"version": "1.0.9", "url": "https://waesna.github.io/#indir", "notes": "Durdur düğmesi anında çalışır; Gemini, komut ve gizli dosya filtreleri ve hata mesajları iyileştirildi."}
+{"version": "1.0.11", "url": "https://waesna.github.io/#indir", "notes": "Sistem yönergesi sadeleştirildi: daha az token, kısa mesajlarda çok daha düşük maliyet."}
