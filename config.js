@@ -15,7 +15,7 @@ const CONFIG = {
   email: "voyageroneai@gmail.com",
 
   /* Sitede gösterilen sürüm numarası */
-  version: "1.0.3",
+  version: "1.0.9",
 
   /* ÖDEME LİNKLERİ ───────────────────────────────────────────────────
      Gumroad / Lemon Squeezy / Payhip gibi bir serviste ürünü oluşturunca
@@ -37,7 +37,7 @@ const CONFIG = {
   /* İNDİRME LİNKLERİ ─────────────────────────────────────────────────
      Boş bırakılan platform "yakında" olarak görünür.                    */
   downloads: {
-    mac:     "https://github.com/waesna/waesna.github.io/releases/download/v1.0.3/VoyagerOne-1.0.3-macOS.dmg",
+    mac:     "https://waesna.github.io/downloads/VoyagerOne-1.0.9-macOS.dmg",
     windows: "https://github.com/waesna/waesna.github.io/releases/download/v1.0.3/VoyagerOne-1.0.3-Windows.zip",
     linux:   "https://github.com/waesna/waesna.github.io/releases/download/v1.0.3/VoyagerOne-1.0.3-Linux.tar.gz"
   },

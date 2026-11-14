@@ -38,6 +38,7 @@
 .meta .go{font-weight:600;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:2px}
 @media (max-width:860px){.prod h3,.meta{grid-column:1/-1}}
 .ul{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:5px;font-weight:600}
+.nums .row h3{font:800 clamp(44px,6vw,88px)/.95 var(--display);font-stretch:75%;letter-spacing:-.022em}
 </style>
 </head>
 <body>
@@ -50,6 +51,7 @@
   <a class="logo" href="#top"><img src="assets/waesna-mark.png" alt="" width="704" height="389">WAESNA</a>
   <div class="nav-links">
     <a href="#urunler" data-t="h.nav.products">Ürünler</a>
+    <a href="#yenilikler" data-t="h.nav.news">Yenilikler</a>
     <a href="#hakkinda" data-t="h.nav.about">Hakkımızda</a>
     <a href="#destek" data-t="h.nav.support">Destek</a>
     <a href="#iletisim" data-t="h.nav.contact">İletişim</a>
@@ -84,6 +86,42 @@
           <div class="foot-row"><span class="pr">$149<small data-t="h.once"> tek seferlik</small></span><span class="go" data-t="h.explore">İncele</span></div>
         </div>
       </a>
+    </div>
+  </div>
+</section>
+
+<section id="rakamlar" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2 data-t="h.num.h">Rakamlarla VoyagerOne</h2><p data-t="h.num.lead">Uygulamanın kapsamını özetleyen temel bilgiler.</p></div>
+    <div class="rows nums">
+      <div class="row"><h3 data-t="h.n1.h">72</h3><p data-t="h.n1.p">Planlama, mühendislik ve kalite için ayrı çalışan yapay zekâ ajanı.</p></div>
+      <div class="row"><h3 data-t="h.n2.h">3</h3><p data-t="h.n2.p">Platform: macOS, Windows ve Linux.</p></div>
+      <div class="row"><h3 data-t="h.n3.h">7 gün</h3><p data-t="h.n3.p">Ücretsiz ve tam sürüm deneme. Kart bilgisi istenmez.</p></div>
+      <div class="row"><h3 data-t="h.n4.h">0 TL</h3><p data-t="h.n4.p">Aylık ücret. Lisans tek seferlik ve süresizdir.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="yenilikler" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2 data-t="h.news.h">Son sürüm</h2><p data-t="h.news.lead">VoyagerOne 1.0.9 macOS için yayında.</p></div>
+    <div class="rows">
+      <div class="row"><h3 data-t="h.nw1.h">Durdur anında etki eder</h3><p data-t="h.nw1.p">Düğmeye bastığınızda model çağrısı da kesilir; yeni mesaj hemen gönderilebilir.</p></div>
+      <div class="row"><h3 data-t="h.nw2.h">Daha güvenli filtreler</h3><p data-t="h.nw2.p">Tehlikeli komutlar ve gizli dosyalar için koruma kapsamı genişletildi.</p></div>
+      <div class="row"><h3 data-t="h.nw3.h">Daha kararlı bulut bağlantısı</h3><p data-t="h.nw3.p">Gemini için güncel model seçimi ve hız sınırında otomatik yeniden deneme eklendi.</p></div>
+    </div>
+    <div class="cta"><a class="btn solid" href="voyagerone.html#indir" data-t="h.nw.dl">macOS için indir</a><a class="btn line" href="voyagerone.html#surumler" data-t="h.nw.all">Tüm sürüm notları</a></div>
+  </div>
+</section>
+
+<section id="ilkeler" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head"><h2 data-t="h.how.h">Nasıl çalışıyoruz</h2><p data-t="h.how.lead">Ürünlerimizi geliştirirken uyduğumuz dört ilke.</p></div>
+    <div class="rows">
+      <div class="row"><h3 data-t="h.w1.h">Önce kullanıcının verisi</h3><p data-t="h.w1.p">Bir özellik veriyi sunucuya göndermeyi gerektiriyorsa varsayılan olarak kapalı gelir ve açıkça izin istenir.</p></div>
+      <div class="row"><h3 data-t="h.w2.h">Küçük ekip, doğrudan destek</h3><p data-t="h.w2.p">Geliştirici sorularınıza kendisi yanıt verir. Hata bildirimleri sonraki güncellemeye girer.</p></div>
+      <div class="row"><h3 data-t="h.w3.h">Abonelik yok</h3><p data-t="h.w3.p">Bir kez ödersiniz. 1.x içindeki tüm güncellemeler lisansa dahildir; kullanmadığınız ay için ücret çıkmaz.</p></div>
+      <div class="row"><h3 data-t="h.w4.h">Sınırlarını söyleyen yazılım</h3><p data-t="h.w4.p">Uygulamanın ne yapamadığını ve nerede hata yapabileceğini belgelerde açıkça yazarız.</p></div>
     </div>
   </div>
 </section>
@@ -177,6 +215,37 @@ const H = {
     "h.ct.h":"İletişim",
     "h.ct.p":"Lisans, fatura ve teknik destek için e-posta gönderebilirsiniz.",
     "h.ft.c.h":"İletişim","h.ft.c.p":"E-posta: voyageroneai@gmail.com. Lisans, fatura ve teknik destek için bu adrese yazabilirsiniz.","h.ft.l.h":"VoyagerOne lisansı","h.ft.l.p":"Tek seferlik ödeme, süresiz kullanım. Pro: 1 kullanıcı, Team: 5, Company: 60 kullanıcı. 1.x güncellemeleri ücretsizdir.","h.ft.r.h":"Deneme ve iade","h.ft.r.p":"7 gün ücretsiz tam sürüm deneme. Anahtar teslim edilmeden iptalde tam iade; teslimden sonra dijital üründe cayma hakkı kullanılamaz.",
+    "h.nav.news":"Yenilikler",
+    "h.num.h":"Rakamlarla VoyagerOne",
+    "h.num.lead":"Uygulamanın kapsamını özetleyen temel bilgiler.",
+    "h.n1.h":"72",
+    "h.n1.p":"Planlama, mühendislik ve kalite için ayrı çalışan yapay zekâ ajanı.",
+    "h.n2.h":"3",
+    "h.n2.p":"Platform: macOS, Windows ve Linux.",
+    "h.n3.h":"7 gün",
+    "h.n3.p":"Ücretsiz ve tam sürüm deneme. Kart bilgisi istenmez.",
+    "h.n4.h":"0 TL",
+    "h.n4.p":"Aylık ücret. Lisans tek seferlik ve süresizdir.",
+    "h.how.h":"Nasıl çalışıyoruz",
+    "h.how.lead":"Ürünlerimizi geliştirirken uyduğumuz dört ilke.",
+    "h.w1.h":"Önce kullanıcının verisi",
+    "h.w1.p":"Bir özellik veriyi sunucuya göndermeyi gerektiriyorsa varsayılan olarak kapalı gelir ve açıkça izin istenir.",
+    "h.w2.h":"Küçük ekip, doğrudan destek",
+    "h.w2.p":"Geliştirici sorularınıza kendisi yanıt verir. Hata bildirimleri sonraki güncellemeye girer.",
+    "h.w3.h":"Abonelik yok",
+    "h.w3.p":"Bir kez ödersiniz. 1.x içindeki tüm güncellemeler lisansa dahildir; kullanmadığınız ay için ücret çıkmaz.",
+    "h.w4.h":"Sınırlarını söyleyen yazılım",
+    "h.w4.p":"Uygulamanın ne yapamadığını ve nerede hata yapabileceğini belgelerde açıkça yazarız.",
+    "h.news.h":"Son sürüm",
+    "h.news.lead":"VoyagerOne 1.0.9 macOS için yayında.",
+    "h.nw1.h":"Durdur anında etki eder",
+    "h.nw1.p":"Düğmeye bastığınızda model çağrısı da kesilir; yeni mesaj hemen gönderilebilir.",
+    "h.nw2.h":"Daha güvenli filtreler",
+    "h.nw2.p":"Tehlikeli komutlar ve gizli dosyalar için koruma kapsamı genişletildi.",
+    "h.nw3.h":"Daha kararlı bulut bağlantısı",
+    "h.nw3.p":"Gemini için güncel model seçimi ve hız sınırında otomatik yeniden deneme eklendi.",
+    "h.nw.all":"Tüm sürüm notları",
+    "h.nw.dl":"macOS için indir",
     "h.ft.privacy":"Gizlilik",
     "h.ft.terms":"Koşullar",
     "skip":"İçeriğe geç",
@@ -222,6 +291,37 @@ const H = {
     "h.ct.h":"Contact",
     "h.ct.p":"Write to us about licenses, invoices or technical support.",
     "h.ft.c.h":"Contact","h.ft.c.p":"Email: voyageroneai@gmail.com. Write to this address about licenses, invoices and technical support.","h.ft.l.h":"VoyagerOne license","h.ft.l.p":"One-time payment, no expiry. Pro: 1 user, Team: 5, Company: 60 users. 1.x updates are free.","h.ft.r.h":"Trial and refunds","h.ft.r.p":"7-day free trial of the full version. Full refund if you cancel before the key is delivered; after delivery the right of withdrawal does not apply to digital products.",
+    "h.nav.news":"News",
+    "h.num.h":"VoyagerOne in numbers",
+    "h.num.lead":"The basic facts that outline the scope of the application.",
+    "h.n1.h":"72",
+    "h.n1.p":"Separate AI agents for planning, engineering and quality.",
+    "h.n2.h":"3",
+    "h.n2.p":"Platforms: macOS, Windows and Linux.",
+    "h.n3.h":"7 days",
+    "h.n3.p":"Free trial of the full version. No card details asked.",
+    "h.n4.h":"$0",
+    "h.n4.p":"Monthly fee. The license is one-time and has no expiry.",
+    "h.how.h":"How we work",
+    "h.how.lead":"Four principles we follow when building our products.",
+    "h.w1.h":"The user's data first",
+    "h.w1.p":"If a feature needs to send data to a server, it is off by default and asks for explicit permission.",
+    "h.w2.h":"Small team, direct support",
+    "h.w2.p":"The developer answers your questions personally. Bug reports go into the next update.",
+    "h.w3.h":"No subscription",
+    "h.w3.p":"You pay once. All updates within 1.x are included; there is no charge for months you do not use it.",
+    "h.w4.h":"Software that states its limits",
+    "h.w4.p":"We say plainly in our documentation what the application cannot do and where it can make mistakes.",
+    "h.news.h":"Latest release",
+    "h.news.lead":"VoyagerOne 1.0.9 is out for macOS.",
+    "h.nw1.h":"Stop takes effect instantly",
+    "h.nw1.p":"Pressing the button also cancels the model call, so a new message can be sent right away.",
+    "h.nw2.h":"Safer filters",
+    "h.nw2.p":"Protection for dangerous commands and secret files was extended.",
+    "h.nw3.h":"More stable cloud connection",
+    "h.nw3.p":"Added current model selection for Gemini and automatic retry on rate limits.",
+    "h.nw.all":"All release notes",
+    "h.nw.dl":"Download for macOS",
     "h.ft.privacy":"Privacy",
     "h.ft.terms":"Terms",
     "skip":"Skip to content",
