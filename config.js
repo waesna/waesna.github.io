@@ -38,8 +38,8 @@ const CONFIG = {
      Boş bırakılan platform "yakında" olarak görünür.                    */
   downloads: {
     mac:     "https://waesna.github.io/downloads/VoyagerOne-1.0.9-macOS.dmg",
-    windows: "https://github.com/waesna/waesna.github.io/releases/download/v1.0.3/VoyagerOne-1.0.3-Windows.zip",
-    linux:   "https://github.com/waesna/waesna.github.io/releases/download/v1.0.3/VoyagerOne-1.0.3-Linux.tar.gz"
+    windows: "https://waesna.github.io/downloads/VoyagerOne-1.0.9-Windows.zip",
+    linux:   "https://waesna.github.io/downloads/VoyagerOne-1.0.9-Linux.tar.gz"
   },
 
   /* SATICI BİLGİLERİ ─────────────────────────────────────────────────
