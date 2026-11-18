@@ -48,6 +48,9 @@ section{padding:clamp(84px,12vw,184px) 0}
 .ghost{position:absolute;right:-6vw;top:-4vw;width:min(70vw,1000px);height:auto;color:var(--mist);pointer-events:none;z-index:0}
 .ghost path{fill:none;stroke:currentColor;stroke-linecap:round;stroke-dasharray:1;animation:draw 1.5s var(--ease) both}
 .ghost path:nth-child(2){animation-delay:.25s}
+.ghost.vg path{fill:currentColor;stroke:none;stroke-dasharray:none;animation:vgin 1.2s var(--ease) both}
+.ghost.vg path:nth-child(2){animation-delay:.2s}
+@keyframes vgin{from{opacity:0;transform:translateY(14px)}}
 .ghost path:nth-child(3){animation-delay:.5s}
 @keyframes draw{0%{stroke-dashoffset:1;opacity:0}2%{opacity:1}100%{stroke-dashoffset:0;opacity:1}}
 .hero .wrap{position:relative;z-index:1}
